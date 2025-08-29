@@ -1,0 +1,63 @@
+﻿@page "/"
+@using BeauProject.Identity.MAUI.Shared.Services
+@using BeauComponents.Components.Controls
+@using System.Data
+@using static BeauComponents.Components.Classes.BeauEnums
+@inject IFormFactor FormFactor
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app running on <em>@factor</em> using <em>@platform</em>.
+
+<BeauGridView Name="grid-view" DataTable="BindDt()" OnClickRow="(n) => { Clicked(n, false); }"
+              Editable="true" />
+
+@code {
+    private string factor => FormFactor.GetFormFactor();
+    private string platform => FormFactor.GetPlatform();
+
+    #region Modal
+    private bool isModalVisible = false;
+    private void ShowModal()
+    {
+        isModalVisible = true;
+    }
+    private void OnModalVisibilityChanged(bool visibility)
+    {
+        isModalVisible = visibility;
+    }
+
+    private static DialogResult _dialogResult;
+    private void OnModalDialogResultChanged(DialogResult dialogResult)
+    {
+        _dialogResult = dialogResult;
+        this.StateHasChanged();
+    }
+    #endregion
+
+    private DataTable BindDt()
+    {
+        DataTable MyDataTable = new DataTable();
+        MyDataTable.Columns.Add("ID", typeof(int));
+        MyDataTable.Columns.Add("Name", typeof(string));
+        MyDataTable.Columns.Add("Age", typeof(int));
+
+        MyDataTable.Rows.Add(1, "Alice", 25);
+        MyDataTable.Rows.Add(2, "Bob", 30);
+        MyDataTable.Rows.Add(3, "Charlie", 35);
+
+        return MyDataTable;
+    }
+
+    string? value;
+    private static DataRowView? selectedRow;
+    private DataRowView? Clicked(DataRowView? dataRow, bool stateHasChanged)
+    {
+        selectedRow = dataRow;
+        if (stateHasChanged == true)
+            this.StateHasChanged();
+        return selectedRow;
+    }
+}

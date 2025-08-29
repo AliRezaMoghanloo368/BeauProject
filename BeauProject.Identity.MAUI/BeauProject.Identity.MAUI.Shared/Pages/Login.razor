@@ -1,0 +1,58 @@
+﻿@page "/login"
+@using BeauComponents.Components.Controls
+@using BeauProject.Identity.Application.DTOs.User
+@using BeauProject.Identity.MAUI.Shared.Layout
+@using BeauProject.Identity.MAUI.Shared.Services
+@rendermode InteractiveServer
+@inject AuthenticationService _authService
+@inject NavigationManager _navigator
+@layout EmptyLayout
+
+<h3>Login</h3>
+
+<div class="form-group mb-3">
+    <BeauInputText @bind-value="userDto.UserName" PlaceHolder="نام کاربری" Class="align-text-center"></BeauInputText>
+</div>
+
+<div class="form-group">
+    <BeauInputText @bind-value="userDto.Password" PlaceHolder="رمز عبور" Class="align-text-center"></BeauInputText>
+</div>
+
+<button class="btn btn-primary mt-3" @onclick="SignIn">Login</button>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p class="text-danger mt-2">@message</p>
+}
+
+@code {
+    private UserDto userDto = new();
+    private string message="";
+
+    private async Task SignIn()
+    {
+        var result = await _authService.LoginAsync(userDto.UserName, userDto.Password);
+        if (result)
+        {
+            _navigator.NavigateTo("/dashboard");
+        }
+        else
+        {
+            message = "Invalid username or password.";
+        }
+    }
+}
+
+<style>
+    .align-text-center {
+        text-align: center;
+    }
+
+    .floating-label {
+        /* right:0 !important; */
+        /* direction:ltr !important; */
+        /* text-align: left !important; */
+        /* left: 10px !important; */
+        /* width: 100% !important; */
+    }
+</style>

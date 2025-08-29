@@ -1,0 +1,6 @@
+@BeauProject.Identity.API_HostAddress = http://localhost:5062
+
+GET {{BeauProject.Identity.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

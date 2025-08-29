@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "BeauProject.Identity.API\\BeauProject.Identity.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "BeauProject.Identity.MAUI\\BeauProject.Identity.MAUI.Web\\BeauProject.Identity.MAUI.Web.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
