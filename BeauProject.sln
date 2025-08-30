@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeauProject.Identity.MAUI.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeauProject.Identity.MAUI.Web", "BeauProject.Identity.MAUI\BeauProject.Identity.MAUI.Web\BeauProject.Identity.MAUI.Web.csproj", "{8F37364F-03D3-47B8-BDB0-A3844E762A33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeauComponents", "..\Blazor\BeauComponents\BeauComponents\BeauComponents.csproj", "{E7B7FF6F-62DF-0B78-1761-16E75C6C38BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{8F37364F-03D3-47B8-BDB0-A3844E762A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F37364F-03D3-47B8-BDB0-A3844E762A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F37364F-03D3-47B8-BDB0-A3844E762A33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B7FF6F-62DF-0B78-1761-16E75C6C38BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B7FF6F-62DF-0B78-1761-16E75C6C38BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B7FF6F-62DF-0B78-1761-16E75C6C38BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B7FF6F-62DF-0B78-1761-16E75C6C38BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +116,7 @@ Global
 		{F43F53BB-8609-4A3C-8127-6FC5FE4E0129} = {AB1BB696-6699-407D-8953-F67C6A5E4F6B}
 		{1D21E09C-4322-4C56-BA54-F731EFBC477B} = {AB1BB696-6699-407D-8953-F67C6A5E4F6B}
 		{8F37364F-03D3-47B8-BDB0-A3844E762A33} = {AB1BB696-6699-407D-8953-F67C6A5E4F6B}
+		{E7B7FF6F-62DF-0B78-1761-16E75C6C38BA} = {9D2EB731-14E6-4DC2-B5B0-5D5C22A6ABB3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AA4B33FD-28E1-4249-8055-D8BFA1922C09}
