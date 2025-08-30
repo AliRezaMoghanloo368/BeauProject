@@ -16,13 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\BeauComponents\BeauComponents\BeauComponents.csproj" />
     <ProjectReference Include="..\..\BeauProject.Identity.Application\BeauProject.Identity.Application.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="BeauComponents">
-      <HintPath>..\..\..\Blazor\BeauComponents\BeauComponents\bin\Debug\net8.0\BeauComponents.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

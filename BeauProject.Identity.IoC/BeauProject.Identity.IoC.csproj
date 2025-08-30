@@ -14,7 +14,6 @@
     <ProjectReference Include="..\BeauProject.Identity.Application\BeauProject.Identity.Application.csproj" />
     <ProjectReference Include="..\BeauProject.Identity.Data\BeauProject.Identity.Data.csproj" />
     <ProjectReference Include="..\BeauProject.Identity.Domain\BeauProject.Identity.Domain.csproj" />
-    <ProjectReference Include="..\BeauProject.Identity.MAUI\BeauProject.Identity.MAUI.Shared\BeauProject.Identity.MAUI.Shared.csproj" />
     <ProjectReference Include="..\BeauProject.Shared\BeauProject.Shared.csproj" />
   </ItemGroup>
 
