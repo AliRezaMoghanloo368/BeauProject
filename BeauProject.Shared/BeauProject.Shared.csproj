@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
+    <PackageReference Include="KavenegarDotNetCore" Version="1.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="9.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
+    <PackageReference Include="Microsoft.JSInterop" Version="9.0.8" />
   </ItemGroup>
 
   <ItemGroup>

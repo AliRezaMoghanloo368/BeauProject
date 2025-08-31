@@ -13,6 +13,14 @@ Welcome to your new app running on <em>@factor</em> using <em>@platform</em>.
 
 <BeauGridView Name="grid-view" DataTable="BindDt()" OnClickRow="(n) => { Clicked(n, false); }"
               Editable="true" />
+<div>
+    <svg class="loading-progress">
+        <circle r="40%" cx="50%" cy="50%" />
+        <circle r="40%" cx="50%" cy="50%" />
+    </svg>
+    <div class="loading-progress-text"></div>
+</div>
+
 
 @code {
     private string factor => FormFactor.GetFormFactor();

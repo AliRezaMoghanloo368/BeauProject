@@ -19,5 +19,4 @@
     <ProjectReference Include="..\..\BeauComponents\BeauComponents\BeauComponents.csproj" />
     <ProjectReference Include="..\..\BeauProject.Identity.Application\BeauProject.Identity.Application.csproj" />
   </ItemGroup>
-
 </Project>

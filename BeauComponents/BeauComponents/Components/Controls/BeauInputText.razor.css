@@ -7,11 +7,11 @@
 .box {
     display: flex;
     background-color: #ffffff;
-    padding: 10px;
+/*    padding: 10px;*/
     position: relative;
     border: 1px solid gainsboro;
     border-radius: 5px;
-    height: 50px;
+    height: fit-content;
     transition: all 0.3s;
     margin-top: 10px;
     margin-bottom: 10px;
