@@ -58,6 +58,9 @@ app.UseStaticFiles();
 app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
+
+app.MapRazorComponents<App>()
     .AddAdditionalAssemblies(typeof(BeauProject.Presentation.Shared._Imports).Assembly);
 
 app.Run();
