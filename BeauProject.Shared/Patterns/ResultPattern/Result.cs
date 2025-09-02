@@ -6,7 +6,6 @@
         public string Message { get; set; }
         public T Data { get; set; }
         public List<string> Error { get; set; }
-        public static Result<T> InstanceResult;
 
         public static Result<T> SuccessResult(T data, string message = "")
         {
