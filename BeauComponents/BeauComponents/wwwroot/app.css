@@ -111,3 +111,7 @@ tr {
 thead {
     background-color: red !important;
 }
+
+.border-radius {
+    border-radius: calc(var(--radius) - 4px) !important;
+}

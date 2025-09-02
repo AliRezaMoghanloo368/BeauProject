@@ -4,13 +4,13 @@ namespace BeauComponents.Components.Controls
 {
     public partial class BeauButton
     {
-        [Parameter] public string? Name { get; set; }
+        [Parameter] public string? Id { get; set; }
         [Parameter] public string Title { get; set; } = "Button";
-        [Parameter] public string? CssClass { get; set; }
+        [Parameter] public string? Class { get; set; }
 
         private string? _butttonStyle;
-        private ButtonTypes? _buttonType;
-        [Parameter] public ButtonTypes? Type 
+        private ButtonType? _buttonType;
+        [Parameter] public ButtonType? Type 
         {
             get { return _buttonType; }
             set
@@ -18,31 +18,31 @@ namespace BeauComponents.Components.Controls
                 _buttonType = value;
                 switch(_buttonType)
                 {   
-                    case ButtonTypes.Primary:
+                    case ButtonType.Primary:
                         _butttonStyle = "btn btn-primary";
                         break;
-                    case ButtonTypes.Secondary:
+                    case ButtonType.Secondary:
                         _butttonStyle = "btn btn-secondary";
                         break;
-                    case ButtonTypes.Success:
+                    case ButtonType.Success:
                         _butttonStyle = "btn btn-success";
                         break;
-                    case ButtonTypes.Danger:
+                    case ButtonType.Danger:
                         _butttonStyle = "btn btn-danger";
                         break;
-                    case ButtonTypes.Warning:
+                    case ButtonType.Warning:
                         _butttonStyle = "btn btn-warning";
                         break;
-                    case ButtonTypes.Info:
+                    case ButtonType.Info:
                         _butttonStyle = "btn btn-info";
                         break;
-                    case ButtonTypes.Light:
+                    case ButtonType.Light:
                         _butttonStyle = "btn btn-light";
                         break;
-                    case ButtonTypes.Dark:
+                    case ButtonType.Dark:
                         _butttonStyle = "btn btn-dark";
                         break;
-                    case ButtonTypes.Link:
+                    case ButtonType.Link:
                         _butttonStyle = "btn btn-link";
                         break;
                 }
@@ -52,13 +52,7 @@ namespace BeauComponents.Components.Controls
         [Parameter] public string? Style { get; set; }
         [Parameter] public string? IconClass { get; set; }
 
-        public class Css
-        {
-            public string? Class { get; set; }
-            public string? Style { get; set; }
-        }
-
-        public enum ButtonTypes
+        public enum ButtonType
         {
             Primary, Secondary, Success, Danger, Warning, Info, Light, Dark, Link
         }

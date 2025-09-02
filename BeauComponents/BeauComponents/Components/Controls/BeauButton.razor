@@ -1,6 +1,6 @@
 ﻿@if (OnClick.HasDelegate == true)
 {
-    <button id="@Name" value="@Title" class="@this.CssClass @_butttonStyle" style="@this.Style" @onclick="OnClick">
+    <button id="@Id" value="@Title" class="@this.Class @_butttonStyle border-radius" style="@this.Style" @onclick="OnClick">
         @if (!string.IsNullOrEmpty(IconClass))
         {
             <i class="@IconClass"></i>
@@ -10,7 +10,7 @@
 }
 else
 {
-    <button id="@Name" class="@_butttonStyle" style="@this.Style">
+    <button id="@Id" class="@_butttonStyle border-radius" style="@this.Style">
         @if (!string.IsNullOrEmpty(IconClass))
         {
             <i class="@IconClass"></i>

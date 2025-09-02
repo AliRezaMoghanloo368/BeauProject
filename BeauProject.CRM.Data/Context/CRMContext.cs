@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using BeauProject.Identity.Data.EntityValidator;
-using BeauProject.Identity.Domain.Models;
-using System.Runtime.InteropServices;
 
 namespace BeauProject.Identity.Data.Context
 {
-    public class IdentityContext : DbContext
+    public class CRMContext : DbContext
     {
-        public IdentityContext(DbContextOptions<IdentityContext> options) : base(options)
+        public CRMContext(DbContextOptions<CRMContext> options) : base(options)
         {
 
         }
@@ -17,7 +14,7 @@ namespace BeauProject.Identity.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfiguration(new UserValidator());
+            //modelBuilder.ApplyConfiguration(new UserValidator());
         }
     }
 }

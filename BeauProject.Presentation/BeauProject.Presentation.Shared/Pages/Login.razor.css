@@ -44,7 +44,7 @@ body {
     background-size: cover;
 }
 
-#btn-enter {
+.btnPrimary {
     background: #0B5ED7;
     background: linear-gradient(177deg, rgba(11, 94, 215, 1) 0%, rgba(87, 199, 133, 1) 100%);
 }
