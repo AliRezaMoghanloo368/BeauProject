@@ -11,7 +11,7 @@
     position: relative;
     border: 1px solid gainsboro;
     border-radius: 5px;
-    height: 35px;
+    height: 40px;
     /* transition: all 0.3s; */
     margin-top: 10px;
     margin-bottom: 10px;
@@ -65,9 +65,9 @@
 }
 
 .fontawesome {
-    padding-right: 10px;
-    color: rgb(64,64,64);
-    width: 25px;
+    padding: 0 5px;
+    color: silver;
+    width: 30px;
     display: flex;
     cursor: pointer;
     transition: all ease-in 3s;

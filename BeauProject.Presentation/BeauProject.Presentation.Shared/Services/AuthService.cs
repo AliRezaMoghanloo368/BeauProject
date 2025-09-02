@@ -5,12 +5,12 @@ using System.Net.Http.Json;
 
 namespace BeauProject.Presentation.Shared.Services
 {
-    public class AuthenticationService
+    public class AuthService
     {
         private readonly HttpClient _httpClient;
         private readonly ILocalStorageService _localStorage;
 
-        public AuthenticationService(IHttpClientFactory httpClientFactory, ILocalStorageService localStorage)
+        public AuthService(IHttpClientFactory httpClientFactory, ILocalStorageService localStorage)
         {
             _httpClient = httpClientFactory.CreateClient("API");
             _localStorage = localStorage;

@@ -18,7 +18,7 @@ builder.Services.AddHttpClient("API", client =>
     client.BaseAddress = new Uri("http://localhost:5001/"); // آدرس API 7127
 });
 // رجیستر کردن ApiAuthClient
-builder.Services.AddScoped<AuthenticationService>();
+builder.Services.AddScoped<AuthService>();
 // برای LocalStorage
 builder.Services.AddBlazoredLocalStorage();
 builder.Services.AddRazorComponents()
