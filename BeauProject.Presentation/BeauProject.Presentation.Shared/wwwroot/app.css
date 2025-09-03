@@ -2,6 +2,8 @@
     direction: rtl;
     box-sizing: border-box;
     text-align: right;
+    margin:0;
+    padding:0;
 }
 
 html, body {
@@ -89,3 +91,13 @@ h1:focus {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+.border-radius {
+    border-radius: calc(var(--radius) - 4px) !important;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

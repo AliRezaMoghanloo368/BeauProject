@@ -8,32 +8,36 @@
 @inject NavigationManager _navigator
 @layout EmptyLayout
 
-<div class="d-flex center vh-100 overflow-hidden m-3" style="width: 325px;">
-    <div class="row">
-        <div class="w-100 d-flex center m-6" style="height:150px;">
-            <span class="profile mx-3" style="width:128px; height:128px;">
-                <img id="img-profile" />
-            </span>
-        </div>
+<div class="main-page flex-center w-100 h-100">
+    <div class="top-nav flex-center">
+        <div class="row" style="width:300px;">
+            <div class="flex-center w-100" style="height:150px;">
+                <span class="profile" style="width:128px; height:128px;">
+                    <img id="img-profile" />
+                </span>
+            </div>
 
-        <div class="overflow-hidden w-100" style="height:180px;">
-            <EditForm Model="@userDto" OnValidSubmit="SignIn">
-                <DataAnnotationsValidator />
-                <ValidationSummary />
-                <div class="form-group mb-3 my-6">
-                    <BeauInputText Id="txt-username" @bind-value="userDto.UserName" PlaceHolder="نام کاربری" Class="txt"></BeauInputText>
-                </div>
-                <div class="form-group">
-                    <BeauInputText Id="txt-password" @bind-value="userDto.Password" PlaceHolder="رمز عبور" Class="txt"
-                                   Type="password" ShowPassword="true"></BeauInputText>
-                </div>
-                <button class="btn btn-primary btnPrimary mt-3">ورود</button> 
-                @* <BeauButton Class="mt-3 btn btnPrimary">ورود</BeauButton> *@
-            </EditForm>
+            <div class="w-100" style="height:190px;">
+                <EditForm  Model="@userDto" OnValidSubmit="SignIn">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="form-group mb-3 my-6">
+                        <BeauInputText Id="txt-username" @bind-value="userDto.UserName" PlaceHolder="نام کاربری" Class="txt"></BeauInputText>
+                    </div>
+                    <div class="form-group">
+                        <BeauInputText Id="txt-password" @bind-value="userDto.Password" PlaceHolder="رمز عبور" Class="txt"
+                                       Type="password" ShowPassword="true"></BeauInputText>
+                    </div>
+                    <button class="btn btn-primary btnPrimary mt-3">ورود</button>
+                    @* <BeauButton Class="mt-3 btn btnPrimary">ورود</BeauButton> *@
+                </EditForm>
+            </div>
         </div>
     </div>
+    <div class="bottom-nav" style="background-color:whitesmoke">
+        
+    </div>
 </div>
-
 
 @if (!string.IsNullOrEmpty(message))
 {
@@ -44,4 +48,22 @@
     .txt {
         text-align: center !important;
     }
+
+    .main-page {
+        display: grid;
+        grid-template-areas: "top-nav" "bottom-nav";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 45px;
+    }
+
+    .top-nav {
+        grid-area: top-nav;
+        height: inherit;
+    }
+
+    .bottom-nav {
+        grid-area: bottom-nav;
+        height: inherit;
+    }
+
 </style>
