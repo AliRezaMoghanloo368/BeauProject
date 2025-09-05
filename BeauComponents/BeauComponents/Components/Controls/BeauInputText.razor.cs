@@ -72,8 +72,26 @@ namespace BeauComponents.Components.Controls
                     _btnPassword = "display:flex";
             }
         }
+
+        private string? _btnCustom = "display:none";
+        private bool? _showCustom = false;
+        [Parameter] public RenderFragment? Custom { get; set; }
+        [Parameter] public EventCallback<MouseEventArgs> CustomClick { get; set; }
+        [Parameter]
+        public bool? ShowCustom
+        {
+            get { return _showCustom; }
+            set
+            {
+                _showCustom = value;
+                if (value == false)
+                    _btnCustom = "display:none";
+                else
+                    _btnCustom = "display:flex";
+            }
+        }
+
         private bool ShowFloatingLabel => IsFocused || !string.IsNullOrWhiteSpace(Value);
-        [Parameter] public RenderFragment? RenderFragment { get; set; }
         [Parameter] public bool? ShowTitle { get; set; } = false;
         [Parameter] public string? Class { get; set; }
         [Parameter] public string? Id { get; set; }
