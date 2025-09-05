@@ -27,13 +27,17 @@
         background-color: transparent;
         text-align: center !important;
     }
+
+    #txt-password path {
+        stroke: rgb(64,64,64);
+    }
 </style>
 
 <div class="main-page flex-center w-100 h-100">
     <div class="top-nav flex-center">
         <div class="row" style="width:250px;">
             <div class="flex-center w-100" style="height:150px;">
-                <span class="profile" style="width:128px; height:128px; background-color: rgba(255, 255, 255, 0.2);">
+                <span class="profile">
                     <img id="img-profile" />
                 </span>
             </div>
@@ -49,9 +53,6 @@
                 <div class="form-group d-flex justify-content-between">
                     <button Class="btn-icon border-radius" @onclick="SignIn">
                         <img src="/images/icons/arrow-right-white.svg" class="wh-20" />
-                    </button>
-                    <button Class="btn-icon border-radius" @onclick="OnPasswordClick">
-                        <img id="img-password" src="/images/icons/eye-white.svg" class="wh-20" />
                     </button>
                 </div>
             </div>

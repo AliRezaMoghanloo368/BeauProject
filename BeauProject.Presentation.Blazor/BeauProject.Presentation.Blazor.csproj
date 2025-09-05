@@ -14,8 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\images\bgs\Fluent Ball - Build 2020.jpg" />
-    <None Include="wwwroot\images\bgs\Fluent Blocks - Build 2020.jpg" />
     <None Include="wwwroot\images\bgs\login.jpg" />
     <None Include="wwwroot\images\bgs\lock.jpg" />
   </ItemGroup>

@@ -6,15 +6,6 @@
     height: 100vh;
 }
 
-.txt {
-    text-align: center !important;
-}
-
-#txt-username {
-    text-align: center !important;
-    height: 50px !important;
-}
-
 .center {
     justify-content: center;
     align-items: center;
@@ -22,8 +13,10 @@
 
 .profile {
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid gainsboro;
+    width: 128px;
+    height: 128px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 #img-profile {
@@ -47,8 +40,7 @@
     grid-template-rows: 1fr 45px;
     background: url("/images/bgs/login.jpg") no-repeat center center fixed;
     background-size: cover;
-    zoom: 1.4;
-    /*    filter: blur(2px);*/
+    zoom: 1.2;
 }
 
 .top-nav {

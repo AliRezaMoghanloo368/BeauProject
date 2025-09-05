@@ -20,10 +20,5 @@ namespace BeauProject.Presentation.Blazor.Components.Pages
                 message = "Invalid username or password.";
             }
         }
-
-        private void OnPasswordClick(MouseEventArgs e)
-        {
-            _js.InvokeVoidAsync("inputPassword", "txt-password");
-        }
     }
 }
