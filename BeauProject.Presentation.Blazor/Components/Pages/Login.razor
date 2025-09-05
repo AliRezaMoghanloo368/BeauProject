@@ -68,11 +68,17 @@
             </div>
         </div>
         <div class="bottom-nav">
-            <button Class="btn-icon border-radius m-1">
+            <button Class="btn-icon border-radius m-2" @onclick="CloseWindow">
                 <img src="/images/icons/power-white.svg" class="wh-20" />
             </button>
-            <button Class="btn-icon border-radius m-1">
+            <button Class="btn-icon border-radius m-2">
                 <img src="/images/icons/user-plus-white.svg" class="wh-20" />
+            </button>
+            <button Class="btn-icon border-radius m-2">
+                <img src="/images/icons/globe-white.svg" class="wh-20" />
+            </button>
+            <button Class="btn-icon border-radius m-2">
+                <img src="/images/icons/database-white.svg" class="wh-20" />
             </button>
         </div>
     </div>
@@ -83,3 +89,10 @@
 {
     <p class="text-danger mt-2">@message</p>
 }
+
+<script>
+    function closeWindow() {
+        window.open('', '_self', '');
+        window.close();
+    }
+</script>

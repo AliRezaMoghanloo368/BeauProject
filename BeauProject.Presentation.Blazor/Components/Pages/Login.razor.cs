@@ -1,5 +1,4 @@
 ﻿using BeauProject.Identity.Application.DTOs.User;
-using Microsoft.AspNetCore.Components.Web;
 using Microsoft.JSInterop;
 
 namespace BeauProject.Presentation.Blazor.Components.Pages
@@ -19,6 +18,11 @@ namespace BeauProject.Presentation.Blazor.Components.Pages
             {
                 message = "Invalid username or password.";
             }
+        }
+
+        async Task CloseWindow()
+        {
+            await _js.InvokeVoidAsync("closeWindow");
         }
     }
 }
