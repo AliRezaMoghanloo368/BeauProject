@@ -1,0 +1,73 @@
+﻿@page "/login"
+@using BeauComponents.Components.Controls
+@using BeauProject.Identity.Application.DTOs.User
+@using BeauProject.Presentation.Blazor.Components.Layout
+@using BeauProject.Presentation.Blazor.Services
+@rendermode InteractiveServer
+@inject AuthService _authService
+@inject NavigationManager _navigator
+@layout EmptyLayout
+@inject IJSRuntime _js;
+
+<style>
+    #div-txt-username {
+        background-color: #fffc !important;
+    }
+
+    #txt-username {
+        background-color: transparent !important;
+        text-align: center !important;
+    }
+
+    #div-txt-password {
+        background-color: #fffc !important;
+    }
+
+    #txt-password {
+        background-color: transparent;
+        text-align: center !important;
+    }
+</style>
+
+<div class="main-page flex-center w-100 h-100">
+    <div class="top-nav flex-center">
+        <div class="row" style="width:250px;">
+            <div class="flex-center w-100" style="height:150px;">
+                <span class="profile" style="width:128px; height:128px; background-color: rgba(255, 255, 255, 0.2);">
+                    <img id="img-profile" />
+                </span>
+            </div>
+
+            <div class="w-100" style="height:190px;">
+                <div class="form-group mb-3 my-6">
+                    <BeauInputText Id="txt-username" @bind-value="userDto.UserName" PlaceHolder="نام کاربری"></BeauInputText>
+                </div>
+                <div class="form-group">
+                    <BeauInputText Id="txt-password" @bind-value="userDto.Password" PlaceHolder="رمز عبور"
+                                   Type="password" ShowPassword="true"></BeauInputText>
+                </div>
+                <div class="form-group d-flex justify-content-between">
+                    <button Class="btn-icon border-radius" @onclick="SignIn">
+                        <img src="/images/icons/arrow-right-white.svg" class="wh-20" />
+                    </button>
+                    <button Class="btn-icon border-radius" @onclick="OnPasswordClick">
+                        <img id="img-password" src="/images/icons/eye-white.svg" class="wh-20" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-nav">
+        <button Class="btn-icon border-radius">
+            <img src="/images/icons/power-white.svg" class="wh-20" />
+        </button>
+        <button Class="btn-icon border-radius">
+            <img src="/images/icons/user-plus-white.svg" class="wh-20" />
+        </button>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p class="text-danger mt-2">@message</p>
+}

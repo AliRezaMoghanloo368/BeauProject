@@ -7,7 +7,7 @@
         "Action": "Start"
       },
       {
-        "Path": "BeauProject.Presentation\\BeauProject.Presentation.Web\\BeauProject.Presentation.Web.csproj",
+        "Path": "BeauProject.Presentation.Blazor\\BeauProject.Presentation.Blazor.csproj",
         "Action": "Start"
       }
     ]

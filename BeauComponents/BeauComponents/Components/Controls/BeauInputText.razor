@@ -2,15 +2,18 @@
 @inherits InputText
 @inject IJSRuntime _js;
 
-<div class="box border-radius @(IsFocused ? "focused" : "")">
+<div id="div-@this.Id" class="box border-radius @(IsFocused ? "focused" : "")">
     @* <div class="lbl-box"> *@
     @*     <label id="lbl1" class="lbl-title"> @Title </label> *@
     @* </div> *@
-    <label class="floating-label @(ShowFloatingLabel ? "float" : "")">@PlaceHolder</label>
-
+    @if (ShowTitle == true)
+    {    
+        <label class="floating-label @(ShowFloatingLabel ? "float" : "")">@Title</label>
+    }
     <input id="@this.Id" class="@ComputedClass"
     type="@Type"
     value="@this.CurrentValueAsString"
+    placeholder="@PlaceHolder"
     @oninput="this.OnInput"
     @onchange="this.OnChange"
     @onfocus="OnFocus"
@@ -96,13 +99,13 @@
 
     function inputPassword(elementId) {
         var x = document.getElementById(elementId);
-        // var img = document.getElementById("img-password");
+        //var img = document.getElementById("img-password");
         if (x.type === "password") {
             x.type = "text";
-            // img.src = "/images/icons/eye-off.svg";  //تصویر چشم بسته یا حالت مخفی
+            //img.src = "/images/icons/eye-off-white.svg";  //تصویر چشم بسته یا حالت مخفی
         } else {
             x.type = "password";
-            // img.src = "/images/icons/eye.svg";     //تصویر چشم باز یا حالت نمایش
+            //img.src = "/images/icons/eye-white.svg";     //تصویر چشم باز یا حالت نمایش
         }
     }
 </script>

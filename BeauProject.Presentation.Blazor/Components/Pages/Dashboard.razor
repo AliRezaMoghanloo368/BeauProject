@@ -1,0 +1,54 @@
+﻿@page "/dashboard"
+@using BeauProject.Presentation.Blazor.Services
+@using Blazored.LocalStorage
+@rendermode InteractiveServer
+@inject AuthService _authService
+@inject NavigationManager Nav
+
+<h3>Dashboard</h3>
+
+@inject IJSRuntime JS
+@inject ILocalStorageService LocalStorage
+
+
+@code {
+    private bool isLoggedIn;
+
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+
+    private async Task Logout()
+    {
+        await _authService.LogoutAsync();
+        Nav.NavigateTo("/login");
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var token = await LocalStorage.GetItemAsStringAsync("authToken");
+            isLoggedIn = !string.IsNullOrEmpty(token);
+            StateHasChanged(); // برای آپدیت UI
+        }
+
+        isLoggedIn = await _authService.IsLoggedInAsync();
+        if (!isLoggedIn)
+        {
+            Nav.NavigateTo("/login");
+        }
+    }
+}
+
+@if (!isLoggedIn)
+{
+    <p>Redirecting to login...</p>
+}
+else
+{
+    <p>Welcome to the dashboard!</p>
+    <button class="btn btn-danger" @onclick="Logout">Logout</button>
+}
+
