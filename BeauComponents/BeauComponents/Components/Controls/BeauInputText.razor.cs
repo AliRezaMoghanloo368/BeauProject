@@ -73,6 +73,7 @@ namespace BeauComponents.Components.Controls
             }
         }
         private bool ShowFloatingLabel => IsFocused || !string.IsNullOrWhiteSpace(Value);
+        [Parameter] public RenderFragment? RenderFragment { get; set; }
         [Parameter] public bool? ShowTitle { get; set; } = false;
         [Parameter] public string? Class { get; set; }
         [Parameter] public string? Id { get; set; }

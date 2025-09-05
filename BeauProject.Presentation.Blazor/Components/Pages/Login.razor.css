@@ -1,10 +1,11 @@
-﻿body {
+﻿/*body {
     background: url('/images/bgs/login.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
     height: 100vh;
-}
+    transition: all ease-in 0.3s;
+}*/
 
 .center {
     justify-content: center;
@@ -12,16 +13,20 @@
 }
 
 .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     border: 1px solid gainsboro;
     width: 128px;
     height: 128px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
 #img-profile {
-    /* background: url("~/images/bgs/login.jpg") no-repeat center center fixed; */
-    background-size: cover;
+    width:70%;
+    height:70%;
+    opacity:0.5;
 }
 
 .btnPrimary {
@@ -34,13 +39,19 @@
 }
 
 .main-page {
+    background: url("/images/bgs/login.jpg") no-repeat center center fixed;
+    background-size: cover;
+    transition: all ease-in 0.3s;
+}
+
+.sub-main-page {
     display: grid;
     grid-template-areas: "top-nav" "bottom-nav";
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 45px;
-    background: url("/images/bgs/login.jpg") no-repeat center center fixed;
-    background-size: cover;
-    zoom: 1.2;
+    grid-template-rows: 1fr 60px;
+    transition: all ease-in 0.3s;
+    backdrop-filter: blur(40px);
+    /*    zoom: 1.2;*/
 }
 
 .top-nav {
@@ -54,5 +65,5 @@
     background-color: transparent;
     display: flex;
     align-items: center;
-    padding-inline: 10px 30px;
+    padding: 10px 10px;
 }
