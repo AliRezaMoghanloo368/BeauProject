@@ -9,13 +9,13 @@
   <ItemGroup>
     <Content Remove="wwwroot\images\bgs\Fluent Ball - Build 2020.jpg" />
     <Content Remove="wwwroot\images\bgs\Fluent Blocks - Build 2020.jpg" />
-    <Content Remove="wwwroot\images\bgs\lock.jpg" />
     <Content Remove="wwwroot\images\bgs\login.jpg" />
+    <Content Remove="wwwroot\images\bgs\login2.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\images\bgs\login2.jpg" />
     <None Include="wwwroot\images\bgs\login.jpg" />
-    <None Include="wwwroot\images\bgs\lock.jpg" />
   </ItemGroup>
 
   <ItemGroup>
