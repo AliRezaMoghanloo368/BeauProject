@@ -3,13 +3,13 @@ using Microsoft.JSInterop;
 
 namespace BeauProject.Presentation.Blazor.Components.Pages
 {
-    public partial class Login
+    public partial class Register
     {
-        private UserDto userDto = new();
+        private CreateUserDto createUserDto = new();
         private string message = "";
-        private async Task SignIn()
+        private async Task RegisterUser()
         {
-            var result = await _authService.LoginAsync(userDto.UserName, userDto.Password);
+            var result = await _authService.RegisterAsync(createUserDto);
             if (result)
             {
                 _navigator.NavigateTo("/dashboard");
@@ -20,15 +20,9 @@ namespace BeauProject.Presentation.Blazor.Components.Pages
             }
         }
 
-        private async Task RegisterPage()
-        {
-            _navigator.NavigateTo("/register");
-        }
-
         async Task CloseWindow()
         {
             await _js.InvokeVoidAsync("closeWindow");
         }
-
     }
 }

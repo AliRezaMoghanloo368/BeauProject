@@ -73,21 +73,21 @@ namespace BeauComponents.Components.Controls
             }
         }
 
-        private string? _btnCustom = "display:none";
-        private bool? _showCustom = false;
-        [Parameter] public RenderFragment? Custom { get; set; }
-        [Parameter] public EventCallback<MouseEventArgs> CustomClick { get; set; }
+        private string? _btnCustomIcon = "display:none";
+        private bool? _showCustomIcon = false;
+        [Parameter] public RenderFragment? CustomIcon { get; set; }
+        [Parameter] public EventCallback<MouseEventArgs> CustomIconClick { get; set; }
         [Parameter]
-        public bool? ShowCustom
+        public bool? ShowCustomIcon
         {
-            get { return _showCustom; }
+            get { return _showCustomIcon; }
             set
             {
-                _showCustom = value;
+                _showCustomIcon = value;
                 if (value == false)
-                    _btnCustom = "display:none";
+                    _btnCustomIcon = "display:none";
                 else
-                    _btnCustom = "display:flex";
+                    _btnCustomIcon = "display:flex";
             }
         }
 

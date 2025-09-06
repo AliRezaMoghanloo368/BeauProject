@@ -10,6 +10,9 @@
 @inject IJSRuntime _js;
 
 <style>
+    .border-radius{
+        border-radius:100px !important;
+    }
     #div-txt-username {
         background-color: #fff !important;
     }
@@ -19,6 +22,7 @@
         text-align: center !important;
         direction:ltr;
         text-indent:0;
+        border-radius: 50px;
     }
 
     #div-txt-password {
@@ -30,6 +34,7 @@
         text-align: center !important;
         direction: ltr;
         text-indent: 0;
+        border-radius: 50px;
     }
 </style>
 
@@ -48,11 +53,11 @@
                 <div class="w-100" style="height:190px;">
                     <div class="form-group mb-3 my-6">
                         <BeauInputText Id="txt-username" @bind-value="userDto.UserName" PlaceHolder="نام کاربری" ShowCustom="true">
-                            <Custom>
+                            <CustomIcon>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="silver" class="size-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                                 </svg>
-                            </Custom>
+                            </CustomIcon>
                         </BeauInputText>
                     </div>
                     <div class="form-group">
@@ -71,7 +76,7 @@
             <button Class="btn-icon border-radius m-2" @onclick="CloseWindow">
                 <img src="/images/icons/power-white.svg" class="wh-20" />
             </button>
-            <button Class="btn-icon border-radius m-2">
+            <button Class="btn-icon border-radius m-2" @onclick="RegisterPage">
                 <img src="/images/icons/user-plus-white.svg" class="wh-20" />
             </button>
             <button Class="btn-icon border-radius m-2">
