@@ -20,6 +20,11 @@ namespace BeauProject.Presentation.Blazor.Components.Pages
             }
         }
 
+        async Task SignInPage()
+        {
+            _navigator.NavigateTo("/login");
+        }
+
         async Task CloseWindow()
         {
             await _js.InvokeVoidAsync("closeWindow");
