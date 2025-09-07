@@ -150,5 +150,32 @@ namespace BeauComponents.Components.Controls
                 await _js.InvokeVoidAsync("invokeTabKey", -1);
             }
         }
+
+        private void GroupBy(string columnName)
+        {
+        //    if (dtPersonnel.DefaultView.Count > 0 && this.cmbType.Items.Count == 0)
+        //    {
+        //        var groupedData = this.dtPersonnel.AsEnumerable()
+        //            .GroupBy(row => row[columnName])
+        //            .Select(group => group.Key)
+        //            .Where(t => t != DBNull.Value)
+        //            .Select(t => t.ToString())
+        //            .OrderBy(t =>
+        //            {
+        //                if (decimal.TryParse(t, out decimal numericValue))
+        //                    return numericValue;
+        //                else
+        //                    return decimal.MaxValue;
+        //            })
+        //            .ToList();
+        //        this.cmbType.Items.Clear();
+        //        for (int i = 0; i < groupedData.Count; i++)
+        //        {
+        //            this.cmbType.Items.Add(groupedData[i].ToString());
+        //        }
+        //        this.cmbType.Items.Add("همه موارد");
+        //        this.cmbType.Text = "همه موارد";
+        //    }
+        }
     }
 }
