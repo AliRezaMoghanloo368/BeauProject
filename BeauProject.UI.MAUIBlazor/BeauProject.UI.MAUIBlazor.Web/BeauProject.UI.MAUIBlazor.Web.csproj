@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BeauProject.UI.MAUIBlazor.Shared\BeauProject.UI.MAUIBlazor.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
