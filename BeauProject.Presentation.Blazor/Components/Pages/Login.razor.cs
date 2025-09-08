@@ -1,13 +1,10 @@
-﻿using BeauComponents.Components.Controls;
-using BeauProject.Identity.Application.DTOs.User;
-using BeauProject.Shared.Classes;
+﻿using BeauProject.Identity.Application.DTOs.User;
 using Microsoft.JSInterop;
 
 namespace BeauProject.Presentation.Blazor.Components.Pages
 {
     public partial class Login
     {
-        private string message = "";
         private UserDto userDto = new();
         private void RegisterPage()
         {
