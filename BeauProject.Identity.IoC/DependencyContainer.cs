@@ -53,7 +53,7 @@ namespace BeauProject.Identity.IoC
             });
             #endregion
 
-            #region Shared Layer
+            #region Identity Layer
             service.AddScoped<IEncrypter, Encrypter>();
             #endregion
 
