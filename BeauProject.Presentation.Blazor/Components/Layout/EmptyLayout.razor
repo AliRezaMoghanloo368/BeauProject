@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using BeauComponents.Components.Controls
+@using BeauProject.Shared.Classes
+@inherits LayoutComponentBase
 
 @Body
 
@@ -7,3 +9,5 @@
         height: 100vh;
     }
 </style>
+
+<Snackbar Text="@Variables.SnackbarMessage"></Snackbar>

@@ -1,4 +1,5 @@
 ﻿using BeauProject.Identity.Application.DTOs.User;
+using BeauProject.Shared.Classes;
 using Microsoft.JSInterop;
 
 namespace BeauProject.Presentation.Blazor.Components.Pages
@@ -12,11 +13,13 @@ namespace BeauProject.Presentation.Blazor.Components.Pages
             var result = await _authService.RegisterAsync(createUserDto);
             if (result)
             {
+                Variables.SnackbarMessage = "ثبت نام با موفقیت انجام شد. 👍";
                 _navigator.NavigateTo("/dashboard");
             }
             else
             {
-                message = "Invalid username or password.";
+                Variables.SnackbarMessage = "نام کاربری و رمز عبور نامعتبر است. 😔";
+                await _js.InvokeVoidAsync("showSnackbar");
             }
         }
 

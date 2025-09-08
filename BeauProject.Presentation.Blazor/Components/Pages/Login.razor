@@ -1,103 +1,58 @@
 ﻿@page "/login"
 @using BeauComponents.Components.Controls
-@using BeauProject.Identity.Application.DTOs.User
 @using BeauProject.Presentation.Blazor.Components.Layout
 @using BeauProject.Presentation.Blazor.Services
 @rendermode InteractiveServer
-@inject AuthService _authService
+@layout WelcomeLayout
 @inject NavigationManager _navigator
-@layout EmptyLayout
+@inject AuthService _authService
 @inject IJSRuntime _js;
 
-<style>
-    .border-radius{
-        border-radius:100px !important;
-    }
-    #div-txt-username {
-        background-color: #fff !important;
-    }
-
-    #txt-username {
-        background-color: transparent !important;
-        text-align: center !important;
-        direction:ltr;
-        text-indent:0;
-        border-radius: 50px;
-    }
-
-    #div-txt-password {
-        background-color: #fff !important;
-    }
-
-    #txt-password {
-        background-color: transparent;
-        text-align: center !important;
-        direction: ltr;
-        text-indent: 0;
-        border-radius: 50px;
-    }
-</style>
-
-<div class="main-page flex-center w-100 vh-100">
-    <div class="sub-main-page flex-center w-100 h-100">
-        <div class="top-nav flex-center">
-            <div class="row" style="width:250px;">
-                <div class="flex-center w-100" style="height:150px;">
-                    <span class="profile">
-                        <svg id="img-profile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="silver" class="size-6">
-                            <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
-                        </svg>
-                    </span>
-                </div>
-
-                <div class="w-100" style="height:190px;">
-                    <div class="form-group mb-3 my-6">
-                        <BeauInputText Id="txt-username" @bind-value="userDto.UserName" PlaceHolder="نام کاربری" ShowCustom="true">
-                            <CustomIcon>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="silver" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                                </svg>
-                            </CustomIcon>
-                        </BeauInputText>
-                    </div>
-                    <div class="form-group">
-                        <BeauInputText Id="txt-password" @bind-value="userDto.Password" PlaceHolder="رمز عبور"
-                                       Type="password" ShowPassword="true"></BeauInputText>
-                    </div>
-                    <div class="form-group d-flex justify-content-between">
-                        <button Class="btn-icon border-radius" @onclick="SignIn">
-                            <img src="/images/icons/arrow-right-white.svg" class="wh-20" />
-                        </button>
-                    </div>
-                </div>
-            </div>
+<div class="top-nav flex-center">
+    <div class="row" style="width:250px;">
+        <div class="flex-center w-100" style="height:150px;">
+            <span class="profile">
+                <svg id="img-profile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="silver" class="size-6">
+                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+                </svg>
+            </span>
         </div>
-        <div class="bottom-nav">
-            <button Class="btn-icon border-radius m-2" @onclick="CloseWindow">
-                <img src="/images/icons/power-white.svg" class="wh-20" />
-            </button>
-            <button Class="btn-icon border-radius m-2" @onclick="RegisterPage">
-                <img src="/images/icons/user-plus-white.svg" class="wh-20" />
-            </button>
-            <button Class="btn-icon border-radius m-2">
-                <img src="/images/icons/globe-white.svg" class="wh-20" />
-            </button>
-            <button Class="btn-icon border-radius m-2">
-                <img src="/images/icons/database-white.svg" class="wh-20" />
-            </button>
+
+        <div class="w-100" style="height:190px;">
+            <div class="form-group">
+                <BeauInputText Id="txt-username" @bind-value="userDto.UserName" PlaceHolder="نام کاربری" ShowCustom="true" ShowCustomIcon="true">
+                    <CustomIcon>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="silver" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+                    </CustomIcon>
+                </BeauInputText>
+            </div>
+            <div class="form-group">
+                <BeauInputText Id="txt-password" @bind-value="userDto.Password" PlaceHolder="رمز عبور"
+                               Type="password" ShowPassword="true"></BeauInputText>
+            </div>
+            <div class="form-group d-flex justify-content-between">
+                <button Class="btn-icon border-radius" @onclick="SignIn">
+                    <img src="/images/icons/arrow-right-white.svg" class="wh-20" />
+                </button>
+            </div>
         </div>
     </div>
 </div>
-
-
-@if (!string.IsNullOrEmpty(message))
-{
-    <p class="text-danger mt-2">@message</p>
-}
-
-<script>
-    function closeWindow() {
-        window.open('', '_self', '');
-        window.close();
-    }
-</script>
+<div class="bottom-nav">
+    <button Class="btn-icon border-radius m-2" @onclick="CloseWindow">
+        <img src="/images/icons/power-white.svg" class="wh-20" />
+    </button>
+    <button Class="btn-icon border-radius m-2" @onclick="RegisterPage">
+        <img src="/images/icons/user-plus-white.svg" class="wh-20" />
+    </button>
+    <button Class="btn-icon border-radius m-2">
+        <img src="/images/icons/globe-white.svg" class="wh-20" />
+    </button>
+    <button Class="btn-icon border-radius m-2">
+        <img src="/images/icons/database-white.svg" class="wh-20" />
+    </button>
+</div>
+@* 
+<Snackbar Text="@message"></Snackbar> *@

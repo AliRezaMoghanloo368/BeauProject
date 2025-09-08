@@ -1,34 +1,36 @@
 ﻿using BeauProject.Identity.Application.DTOs.User;
+using BeauProject.Shared.Classes;
 using Microsoft.JSInterop;
 
 namespace BeauProject.Presentation.Blazor.Components.Pages
 {
     public partial class Login
     {
-        private UserDto userDto = new();
         private string message = "";
+        private UserDto userDto = new();
+        private void RegisterPage()
+        {
+            _navigator.NavigateTo("/register");
+        }
+
         private async Task SignIn()
         {
             var result = await _authService.LoginAsync(userDto.UserName, userDto.Password);
             if (result)
             {
+                Variables.SnackbarMessage = "خوش آمدید ❤️🌺";
                 _navigator.NavigateTo("/dashboard");
             }
             else
             {
-                message = "Invalid username or password.";
+                Variables.SnackbarMessage = "نام کاربری و رمز عبور نامعتبر است. 😔";
+                await _js.InvokeVoidAsync("showSnackbar");
             }
         }
 
-        private async Task RegisterPage()
-        {
-            _navigator.NavigateTo("/register");
-        }
-
-        async Task CloseWindow()
+        public async Task CloseWindow()
         {
             await _js.InvokeVoidAsync("closeWindow");
         }
-
     }
 }

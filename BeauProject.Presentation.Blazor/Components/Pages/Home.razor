@@ -2,6 +2,7 @@
 @using BeauComponents.Components.Controls
 @using System.Data
 @using static BeauComponents.Components.Classes.BeauEnums
+@inject IJSRuntime _js;
 
 <PageTitle>Home</PageTitle>
 
@@ -19,24 +20,13 @@
 
 
 @code {
-    #region Modal
-    private bool isModalVisible = false;
-    private void ShowModal()
-    {
-        isModalVisible = true;
-    }
-    private void OnModalVisibilityChanged(bool visibility)
-    {
-        isModalVisible = visibility;
-    }
 
-    private static DialogResult _dialogResult;
-    private void OnModalDialogResultChanged(DialogResult dialogResult)
+    protected override void OnAfterRender(bool firstRender)
     {
-        _dialogResult = dialogResult;
-        this.StateHasChanged();
+        if (firstRender)
+            _js.InvokeVoidAsync("showSnackbar");
+        base.OnAfterRender(firstRender);
     }
-    #endregion
 
     private DataTable BindDt()
     {
@@ -61,4 +51,23 @@
             this.StateHasChanged();
         return selectedRow;
     }
+
+    #region Modal
+    private bool isModalVisible = false;
+    private void ShowModal()
+    {
+        isModalVisible = true;
+    }
+    private void OnModalVisibilityChanged(bool visibility)
+    {
+        isModalVisible = visibility;
+    }
+
+    private static DialogResult _dialogResult;
+    private void OnModalDialogResultChanged(DialogResult dialogResult)
+    {
+        _dialogResult = dialogResult;
+        this.StateHasChanged();
+    }
+    #endregion
 }
