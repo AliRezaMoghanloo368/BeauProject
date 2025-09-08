@@ -1,0 +1,6 @@
+@BeauProject.Shared.API_HostAddress = http://localhost:5078
+
+GET {{BeauProject.Shared.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
