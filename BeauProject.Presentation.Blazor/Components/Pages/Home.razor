@@ -20,14 +20,6 @@
 
 
 @code {
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        if (firstRender)
-            _js.InvokeVoidAsync("showSnackbar");
-        base.OnAfterRender(firstRender);
-    }
-
     private DataTable BindDt()
     {
         DataTable MyDataTable = new DataTable();

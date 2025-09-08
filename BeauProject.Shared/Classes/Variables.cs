@@ -8,6 +8,6 @@ namespace BeauProject.Shared.Classes
 {
     public class Variables
     {
-        public static string SnackbarMessage { get; set; }
+        public static string? SnackbarMessage { get; set; }
     }
 }

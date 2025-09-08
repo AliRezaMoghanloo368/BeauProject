@@ -32,18 +32,15 @@ namespace BeauProject.Presentation.Blazor.Services
             return false;
         }
 
-        public async Task<bool> RegisterAsync(CreateUserDto createUserDto)
+        public async Task<Result<bool>> RegisterAsync(CreateUserDto createUserDto)
         {
             var response = await _httpClient.PostAsJsonAsync("api/User/register", createUserDto);
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.Content.ReadFromJsonAsync<Result<string>>();
-                if (!string.IsNullOrEmpty(result.Data))
-                {
-                    return true;
-                }
+                var result = await response.Content.ReadFromJsonAsync<Result<bool>>();
+                return result;
             }
-            return false;
+            return null;
         }
 
         public async Task LogoutAsync()
