@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\BeauProject.Shared.Application\BeauProject.Shared.Application.csproj" />
+    <ProjectReference Include="..\BeauProject.Shared.IoC\BeauProject.Shared.IoC.csproj" />
+    <ProjectReference Include="..\BeauProject.Shared\BeauProject.Shared.csproj" />
   </ItemGroup>
 
 </Project>
