@@ -1,6 +1,6 @@
 ﻿namespace BeauProject.Shared.Domain.Models
 {
-    public class Tikets
+    public class Tickets
     {
         public int Id { get; set; }
         public int Code { get; set; }
@@ -8,7 +8,7 @@
         public string Subject { get; set; }
         public int Status { get; set; }
         public DateTime Date { get; set; }
-        public Tikets()
+        public Tickets()
         {
             Date = DateTime.Now;
         }
