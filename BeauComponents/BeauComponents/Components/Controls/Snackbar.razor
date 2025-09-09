@@ -1,4 +1,4 @@
-﻿<div id="snackbar"></div>
+﻿<div id="snackbar" style="border-radius:10px;"></div>
 
 <script>
     function showSnackbar(text) {
@@ -7,7 +7,7 @@
 
       // Add the "show" class to DIV
       x.className = "show";
-       x.textContent = text;
+      x.textContent = text;
 
       // After 3 seconds, remove the show class from DIV
       setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
