@@ -9,8 +9,9 @@
         }
 
         public Guid Id { get; set; }
-        public int Code { get; set; }
-        public int CustomerId { get; set; }
+        public int MessageCode { get; set; }
+        public Guid CustomerId { get; set; }
+        public Guid UserId { get; set; }
         public string Subject { get; set; }
         public int Status { get; set; }
         public DateTime Date { get; set; }
