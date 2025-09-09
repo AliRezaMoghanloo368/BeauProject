@@ -1,4 +1,4 @@
-﻿namespace BeauProject.Shared.Domain.Models
+﻿namespace BeauProject.Site.Domain.Models
 {
     public class Tickets
     {
