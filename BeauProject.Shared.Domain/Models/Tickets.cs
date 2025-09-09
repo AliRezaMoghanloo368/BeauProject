@@ -2,15 +2,18 @@
 {
     public class Tickets
     {
-        public int Id { get; set; }
+        public Tickets()
+        {
+            Id = Guid.NewGuid();
+            Date = DateTime.Now;
+        }
+
+        public Guid Id { get; set; }
         public int Code { get; set; }
         public int CustomerId { get; set; }
         public string Subject { get; set; }
         public int Status { get; set; }
         public DateTime Date { get; set; }
-        public Tickets()
-        {
-            Date = DateTime.Now;
-        }
+
     }
 }

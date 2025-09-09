@@ -8,7 +8,7 @@
         }
         public int Id { get; set; }
         public string Title { get; set; }
-        public int CustommerID { get; set; }
+        public int CustomerId { get; set; }
         public string Stage { get; set; }
         public decimal Amount { get; set; }
         public DateTime Date { get; set; }
