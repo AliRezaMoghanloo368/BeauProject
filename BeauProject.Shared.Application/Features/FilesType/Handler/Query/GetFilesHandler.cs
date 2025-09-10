@@ -3,7 +3,6 @@ using BeauProject.Shared.Domain.Interfaces;
 using BeauProject.Shared.Domain.Models;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
-using Microsoft.Extensions.Configuration;
 
 namespace BeauProject.Shared.Application.Features.FilesType.Handler.Query
 {

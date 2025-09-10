@@ -24,7 +24,7 @@ namespace BeauProject.Identity.Application.Features.UserType.Handler.Query
             var user = await _userRepository.GetWithUserName(request.GetUserDto.UserName);
             if (user == null)
             {
-                return null;
+                return new GetUserDto();
             }
 
             return _mapper.Map<GetUserDto>(user);

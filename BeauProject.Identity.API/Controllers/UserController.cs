@@ -39,6 +39,10 @@ namespace BeauProject.Identity.API.Controllers
         {
             GetUserDto userDto = new GetUserDto() { UserName = userName };
             var result = await _mediator.Send(new GetUserRequest() { GetUserDto = userDto });
+
+            if (result.Id == null)
+                result = userDto;
+
             return Ok(result);
         }
 
