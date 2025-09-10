@@ -34,6 +34,14 @@ namespace BeauProject.Identity.API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("userInfo/{userName}")]
+        public async Task<IActionResult> GetUser(string userName)
+        {
+            GetUserDto userDto = new GetUserDto() { UserName = userName };
+            var result = await _mediator.Send(new GetUserRequest() { GetUserDto = userDto });
+            return Ok(result);
+        }
+
         //----------------------------------------------------------------------------------//
 
         //private readonly IAuthService _authService;

@@ -10,6 +10,7 @@ namespace BeauProject.Identity.Application.Profilers
         {
             CreateMap<User, CreateUserDto>().ReverseMap();
             CreateMap<User, UpdateUserDto>().ReverseMap();
+            CreateMap<User, GetUserDto>().ReverseMap();
         }
     }
 }

@@ -27,10 +27,6 @@ namespace BeauProject.Shared.API.Controllers
         public async Task<IActionResult> Load(FilesDto filesDto)
         {
             var result = await _mediator.Send(new GetFilesRequest() { FilesDto = filesDto });
-
-            if (string.IsNullOrEmpty(result.Data))
-                return Unauthorized(result);
-
             return Ok(result);
         }
     }

@@ -13,5 +13,11 @@ namespace BeauProject.Shared.Data.Repositories
         {
             _context = context;
         }
+
+        public async Task<List<Files>> GetFilesAsync(string entityName, string entityId)
+        {
+            return await _context.Files
+                .Where(x => x.EntityName == entityName && x.EntityId == entityId).ToListAsync();
+        }
     }
 }

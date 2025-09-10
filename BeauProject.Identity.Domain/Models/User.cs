@@ -2,6 +2,11 @@
 {
     public class User
     {
+        public User(bool newId) 
+        {
+        
+        }
+
         public User()
         {
             Id = Guid.NewGuid();
