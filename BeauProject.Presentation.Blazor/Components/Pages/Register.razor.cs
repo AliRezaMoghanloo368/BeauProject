@@ -5,8 +5,8 @@ namespace BeauProject.Presentation.Blazor.Components.Pages
 {
     public partial class Register
     {
-        private CreateUserDto createUserDto = new();
-        private async Task RegisterUser()
+        CreateUserDto createUserDto = new();
+        async Task RegisterUser()
         {
             var result = await _authService.RegisterAsync(createUserDto);
             if (result.Data)
@@ -27,7 +27,7 @@ namespace BeauProject.Presentation.Blazor.Components.Pages
             }
         }
 
-        async Task SignInPage()
+        void SignInPage()
         {
             _navigator.NavigateTo("/login");
         }
