@@ -9,13 +9,20 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents();
 
 #region IoC
-builder.Services.AddHttpClient("API", client =>
+builder.Services.AddHttpClient("API/Users", client =>
 {
-    client.BaseAddress = new Uri("http://localhost:5001/"); // آدرس API 7127
+    client.BaseAddress = new Uri("http://localhost:5001/");
+});
+builder.Services.AddHttpClient("API/Files", client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5002/");
 });
 
 // رجیستر کردن ApiAuthClient
 builder.Services.AddScoped<AuthService>();
+
+// جهت مدارک و عکسها و فایلهای متنوع
+builder.Services.AddScoped<FilesService>();
 
 // برای LocalStorage
 builder.Services.AddBlazoredLocalStorage();

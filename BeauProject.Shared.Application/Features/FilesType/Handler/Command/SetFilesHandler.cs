@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using BeauProject.Shared.Application.DTOs.Files.Validator;
 using BeauProject.Shared.Application.Features.FilesType.Request.Command;
 using BeauProject.Shared.Domain.Interfaces;
+using BeauProject.Shared.Domain.Models;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
 
@@ -17,17 +19,15 @@ namespace BeauProject.Shared.Application.Features.FilesType.Handler.Command
         }
         public async Task<Result<bool>> Handle(SetFilesRequest request, CancellationToken cancellationToken)
         {
-            //var valid = new CreateFilesDtoValidation(_filesRepository);
-            //var filesIsValid = await valid.ValidateAsync(request.CreateFilesDto);
-            //if (!filesIsValid.IsValid)
-            //{
-            //    return Result<bool>.ErrorResult(filesIsValid.Errors.Select(x => x.ErrorMessage).ToList());
-            //}
+            var valid = new CreateFilesDtoValidation(_filesRepository);
+            var filesIsValid = await valid.ValidateAsync(request.CreateFilesDto);
+            if (!filesIsValid.IsValid)
+            {
+                return Result<bool>.ErrorResult(filesIsValid.Errors.Select(x => x.ErrorMessage).ToList());
+            }
 
-            //var filesEntity = _mapper.Map<Files>(request.CreateFilesDto);
-            //filesEntity.Salt = filesEntity.Salt.GenerateSalt(_encrypter);
-            //filesEntity.Password = filesEntity.Password.HashPassword(filesEntity.Salt, _encrypter);
-            //await _filesRepository.Create(filesEntity);
+            var filesEntity = _mapper.Map<Files>(request.CreateFilesDto);
+            await _filesRepository.Create(filesEntity);
             return Result<bool>.SuccessResult(true);
         }
     }

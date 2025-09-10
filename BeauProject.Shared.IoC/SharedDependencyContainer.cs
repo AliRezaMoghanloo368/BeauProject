@@ -1,6 +1,9 @@
-﻿using BeauProject.Shared.Data.Context;
+﻿using BeauProject.Shared.Application.Features.FilesType.Handler.Command;
+using BeauProject.Shared.Application.Profilers;
+using BeauProject.Shared.Data.Context;
 using BeauProject.Shared.Data.Repositories;
 using BeauProject.Shared.Domain.Interfaces;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,8 +18,8 @@ namespace BeauProject.Shared.IoC
             #region Application Layer
             //service.AddMediatR(Assembly.GetExecutingAssembly());
             //service.AddAutoMapper(Assembly.GetExecutingAssembly());
-            //service.AddMediatR(typeof(RegisterUserHandler).Assembly);
-            //service.AddAutoMapper(typeof(AutoMapperProfiler).Assembly);
+            service.AddMediatR(typeof(SetFilesHandler).Assembly);
+            service.AddAutoMapper(typeof(AutoMapperProfiler).Assembly);
             #endregion
 
             #region Data Layer

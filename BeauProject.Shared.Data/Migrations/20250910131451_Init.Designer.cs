@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeauProject.Shared.Data.Migrations
 {
     [DbContext(typeof(SharedContext))]
-    [Migration("20250909075406_INIT")]
-    partial class INIT
+    [Migration("20250910131451_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,21 +46,18 @@ namespace BeauProject.Shared.Data.Migrations
                         .HasColumnType("varbinary(max)");
 
                     b.Property<string>("FileDate")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FileName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FilePath")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("FileSize")
+                    b.Property<long?>("FileSize")
                         .HasColumnType("bigint");
 
                     b.Property<string>("FileType")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -70,7 +67,6 @@ namespace BeauProject.Shared.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UploadBy")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

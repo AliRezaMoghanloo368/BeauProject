@@ -1,4 +1,5 @@
 ﻿using BeauProject.Identity.Application.DTOs.User;
+using BeauProject.Identity.Domain.Models;
 using BeauProject.Shared.Patterns.ResultPattern;
 using Blazored.LocalStorage;
 using System.Net.Http.Json;
@@ -12,7 +13,7 @@ namespace BeauProject.Presentation.Blazor.Services
 
         public AuthService(IHttpClientFactory httpClientFactory, ILocalStorageService localStorage)
         {
-            _httpClient = httpClientFactory.CreateClient("API");
+            _httpClient = httpClientFactory.CreateClient("API/Users");
             _localStorage = localStorage;
         }
 
@@ -32,12 +33,12 @@ namespace BeauProject.Presentation.Blazor.Services
             return false;
         }
 
-        public async Task<Result<bool>> RegisterAsync(CreateUserDto createUserDto)
+        public async Task<Result<User>> RegisterAsync(CreateUserDto createUserDto)
         {
             var response = await _httpClient.PostAsJsonAsync("api/User/register", createUserDto);
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.Content.ReadFromJsonAsync<Result<bool>>();
+                var result = await response.Content.ReadFromJsonAsync<Result<User>>();
                 return result;
             }
             return null;

@@ -16,15 +16,15 @@ namespace BeauProject.Shared.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register(CreateFilesDto createFilesDto)
+        [HttpPost("upload")]
+        public async Task<IActionResult> Upload(CreateFilesDto createFilesDto)
         {
             var result = await _mediator.Send(new SetFilesRequest() { CreateFilesDto = createFilesDto });
             return Ok(result);
         }
 
-        [HttpPost("login")]
-        public async Task<IActionResult> Login(FilesDto filesDto)
+        [HttpPost("load")]
+        public async Task<IActionResult> Load(FilesDto filesDto)
         {
             var result = await _mediator.Send(new GetFilesRequest() { FilesDto = filesDto });
 

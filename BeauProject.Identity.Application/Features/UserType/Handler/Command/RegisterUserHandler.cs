@@ -10,7 +10,7 @@ using MediatR;
 
 namespace BeauProject.Identity.Application.Features.UserType.Handler.Command
 {
-    public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, Result<bool>>
+    public class RegisterUserHandler : IRequestHandler<RegisterUserRequest, Result<User>>
     {
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
@@ -21,20 +21,21 @@ namespace BeauProject.Identity.Application.Features.UserType.Handler.Command
             _mapper = mapper;
             _encrypter = encrypter;
         }
-        public async Task<Result<bool>> Handle(RegisterUserRequest request, CancellationToken cancellationToken)
+        public async Task<Result<User>> Handle(RegisterUserRequest request, CancellationToken cancellationToken)
         {
             var valid = new CreateUserDtoValidation(_userRepository);
             var userIsValid = await valid.ValidateAsync(request.CreateUserDto);
             if (!userIsValid.IsValid)
             {
-                return Result<bool>.ErrorResult(userIsValid.Errors.Select(x => x.ErrorMessage).ToList());
+                return Result<User>.ErrorResult(userIsValid.Errors.Select(x => x.ErrorMessage).ToList());
             }
 
             var userEntity = _mapper.Map<User>(request.CreateUserDto);
             userEntity.Salt = userEntity.Salt.GenerateSalt(_encrypter);
             userEntity.Password = userEntity.Password.HashPassword(userEntity.Salt, _encrypter);
             await _userRepository.Create(userEntity);
-            return Result<bool>.SuccessResult(true);
+            var user = await _userRepository.GetWithUserName(userEntity.UserName);
+            return Result<User>.SuccessResult(user);
         }
     }
 }

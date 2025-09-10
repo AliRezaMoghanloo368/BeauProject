@@ -27,6 +27,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BeauComponents\BeauComponents\BeauComponents.csproj" />
     <ProjectReference Include="..\BeauProject.Identity.IoC\BeauProject.Identity.IoC.csproj" />
+    <ProjectReference Include="..\BeauProject.Shared.Application\BeauProject.Shared.Application.csproj" />
     <ProjectReference Include="..\BeauProject.Shared\BeauProject.Shared.csproj" />
   </ItemGroup>
 

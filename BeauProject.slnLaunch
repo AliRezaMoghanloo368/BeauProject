@@ -1,6 +1,6 @@
 [
   {
-    "Name": "New Profile",
+    "Name": "BeauApp",
     "Projects": [
       {
         "Path": "BeauProject.Identity.API\\BeauProject.Identity.API.csproj",
@@ -8,6 +8,10 @@
       },
       {
         "Path": "BeauProject.Presentation.Blazor\\BeauProject.Presentation.Blazor.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "BeauProject.Shared.API\\BeauProject.Shared.API.csproj",
         "Action": "Start"
       }
     ]
