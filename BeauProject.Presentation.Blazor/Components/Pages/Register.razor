@@ -11,12 +11,28 @@
 
 <div class="top-nav flex-center">
     <div class="row" style="width:250px;">
-        <div class="flex-center w-100" style="height:150px;">
+        <div class="flex-center w-100 position-relative" style="height:150px;">
             <span class="profile">
-                <svg id="img-profile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="silver" class="size-6">
-                    <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
-                </svg>
+                @if (this.profileImage == null)
+                {
+                    @* <img class="profileImage" src="data:image/png;base64,@Convert.ToBase64String(user.Image)" /> *@
+                    <svg id="img-profile" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="silver" class="size-6">
+                        <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+                    </svg>
+                }
+                else
+                {
+                    @foreach (var item in filesBase64)
+                    {
+                        <img src="data:@item.contentType;base64,@item.base64data" style="border-radius: 50%;" class="w-100 h-100" />
+                    }
+                }
             </span>
+            <button Class="btn-icon border-radius btn-upload flex-center">
+                <label for="file-upload" class="w-100 h-100 text-white flex-center" style="cursor:pointer;">
+                    <img src="/images/icons/image-white.svg" class="wh-20" />
+                </label>
+            </button>
         </div>
 
         <div class="w-100" style="height:190px;">
@@ -75,3 +91,4 @@
         <img src="/images/icons/database-white.svg" class="wh-20" />
     </button>
 </div>
+<InputFile id="file-upload" style="visibility:hidden; display:none;" Onchange="OnChange" accept="image/png, image/jpeg, image/gif" />

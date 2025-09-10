@@ -67,3 +67,9 @@
     align-items: center;
     padding: 10px 10px;
 }
+
+.btn-upload {
+    position: absolute;
+    bottom: 0;
+    right: 45px;
+}
