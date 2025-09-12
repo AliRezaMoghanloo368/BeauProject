@@ -28,7 +28,7 @@ namespace BeauProject.Presentation.Blazor.Components.Pages
             {
                 await _js.InvokeVoidAsync("showSnackbar", "خوش آمدید ❤️🌺");
                 Thread.Sleep(1000);
-                _navigator.NavigateTo("/dashboard");
+                _navigator.NavigateTo("/desktop");
             }
             else
             {

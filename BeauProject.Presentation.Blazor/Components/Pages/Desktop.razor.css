@@ -1,0 +1,30 @@
+﻿.desktop-page {
+    background: url("/images/bgs/login2.jpg") repeat center center fixed;
+    background-size: cover;
+    transition: all ease-in 0.3s;
+}
+
+.sub-main-page {
+    display: grid;
+    grid-template-areas: "top-nav" "bottom-nav";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 45px;
+    transition: all ease-in 0.3s;
+}
+
+.top-nav {
+    grid-area: top-nav;
+    height: inherit;
+}
+
+.bottom-nav {
+    grid-area: bottom-nav;
+    height: inherit;
+    background-color: #dfebf5f2;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    backdrop-filter: blur(40px);
+    border-top: 1px solid #0000000d;
+}
+
