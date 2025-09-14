@@ -4,6 +4,7 @@ using BeauProject.Shared.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeauProject.Shared.Data.Migrations
 {
     [DbContext(typeof(SharedContext))]
-    partial class SharedContextModelSnapshot : ModelSnapshot
+    [Migration("20250914095605_CreateTicketsProductsGroupProducts")]
+    partial class CreateTicketsProductsGroupProducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

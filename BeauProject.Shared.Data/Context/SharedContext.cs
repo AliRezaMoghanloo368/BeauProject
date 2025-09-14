@@ -12,6 +12,7 @@ namespace BeauProject.Shared.Data.Context
         }
 
         public DbSet<Files> Files { get; set; }
+        public DbSet<Tickets> Tickets { get; set; }
         public DbSet<Products> Products { get; set; }
         public DbSet<GroupProducts> GroupProducts { get; set; }
 
