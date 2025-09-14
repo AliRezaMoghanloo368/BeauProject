@@ -12,7 +12,7 @@ namespace BeauProject.Presentation.Blazor.Services
             _httpClient = httpClientFactory.CreateClient("API/Files");
         }
 
-        public async Task<Result<bool>> UploadAsync(CreateFilesDto createFilesDto)
+        public async Task<Result<bool>?> UploadAsync(CreateFilesDto createFilesDto)
         {
             var response = await _httpClient.PostAsJsonAsync("api/Files/upload", createFilesDto);
             if (response.IsSuccessStatusCode)
@@ -23,7 +23,7 @@ namespace BeauProject.Presentation.Blazor.Services
             return null;
         }
 
-        public async Task<Result<List<Files>>> LoadAsync(FilesDto filesDto)
+        public async Task<Result<List<Files>>?> LoadAsync(FilesDto filesDto)
         {
             var response = await _httpClient.PostAsJsonAsync("api/Files/load", filesDto);
             if (response.IsSuccessStatusCode)
