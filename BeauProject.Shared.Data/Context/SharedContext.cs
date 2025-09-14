@@ -12,11 +12,15 @@ namespace BeauProject.Shared.Data.Context
         }
 
         public DbSet<Files> Files { get; set; }
+        public DbSet<Products> Products { get; set; }
+        public DbSet<GroupProducts> GroupProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new FilesValidator());
+            modelBuilder.ApplyConfiguration(new ProductsValidator());
+            modelBuilder.ApplyConfiguration(new GroupProductsValidator());
         }
     }
 }

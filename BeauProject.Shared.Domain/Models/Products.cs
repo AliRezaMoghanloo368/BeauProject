@@ -1,4 +1,6 @@
-﻿namespace BeauProject.Shared.Domain.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BeauProject.Shared.Domain.Models
 {
     public class Products
     {
@@ -6,9 +8,12 @@
         {
         }
         public int Id { get; set; }
-        public int Code { get; set; }
+        public string Code { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public int GroupProducts { get; set; }
+        public int GroupProductsId { get; set; }
+
+        // Navigation property
+        public GroupProducts GroupProducts { get; set; }
     }
 }
