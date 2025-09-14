@@ -9,6 +9,8 @@ namespace BeauProject.Shared.Data.EntityValidator
         public void Configure(EntityTypeBuilder<Files> builder)
         {
             builder.ToTable("Files");
+
+            // ستون Id
             builder.HasKey(x => x.Id);
         }
     }

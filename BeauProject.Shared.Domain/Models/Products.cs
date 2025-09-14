@@ -6,6 +6,7 @@ namespace BeauProject.Shared.Domain.Models
     {
         public Products()
         {
+            
         }
         public int Id { get; set; }
         public string Code { get; set; }

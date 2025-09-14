@@ -1,4 +1,4 @@
-﻿namespace BeauProject.Site.Domain.Models
+﻿namespace BeauProject.Shared.Domain.Models
 {
     public class Tickets
     {
@@ -7,7 +7,6 @@
             Id = Guid.NewGuid();
             Date = DateTime.Now;
         }
-
         public Guid Id { get; set; }
         public int MessageCode { get; set; }
         public Guid CustomerId { get; set; }
@@ -15,6 +14,5 @@
         public string Subject { get; set; }
         public int Status { get; set; }
         public DateTime Date { get; set; }
-
     }
 }
