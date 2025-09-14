@@ -7,11 +7,11 @@
         "Action": "Start"
       },
       {
-        "Path": "BeauProject.Presentation.Blazor\\BeauProject.Presentation.Blazor.csproj",
+        "Path": "BeauProject.Shared.API\\BeauProject.Shared.API.csproj",
         "Action": "Start"
       },
       {
-        "Path": "BeauProject.Shared.API\\BeauProject.Shared.API.csproj",
+        "Path": "BeauProject.UI.App.MAUI.Shared\\BeauProject.UI.App.MAUI.Shared.csproj",
         "Action": "Start"
       }
     ]

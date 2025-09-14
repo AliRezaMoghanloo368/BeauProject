@@ -1,0 +1,26 @@
+﻿@page "/desktop"
+@using BeauProject.UI.App.MAUI.Shared.Components.Layout
+@layout EmptyLayout
+@rendermode InteractiveServer
+@inject NavigationManager _navigator
+@inject IJSRuntime _js;
+
+<div class="desktop-page w-100 vh-100">
+    <div class="sub-main-page flex-center w-100 h-100">
+        <div class="top-nav flex-center">
+            
+        </div>
+        <div class="bottom-nav">
+            <button Class="btn-icon border-radius m-2" @onclick="CloseWindow">
+                <img src="/images/icons/power-black.svg" class="wh-20" />
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function closeWindow() {
+        window.open('', '_self', '');
+        window.close();
+    }
+</script>
