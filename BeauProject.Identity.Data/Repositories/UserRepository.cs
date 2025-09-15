@@ -1,7 +1,7 @@
 ﻿using BeauProject.Identity.Data.Context;
 using BeauProject.Identity.Domain.Interfaces;
 using BeauProject.Identity.Domain.Models;
-using BeauProject.Shared.Implements;
+using BeauProject.Shared.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace BeauProject.Identity.Data.Repositories

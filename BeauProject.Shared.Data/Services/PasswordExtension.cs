@@ -1,13 +1,7 @@
-﻿using BeauProject.Shared.Exceptions;
-using BeauProject.Shared.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BeauProject.Shared.Application.Interfaces;
+using BeauProject.Shared.Utilities;
 
-namespace BeauProject.Shared.Extensions
+namespace BeauProject.Shared.Data.Services
 {
     public static class PasswordExtension
     {

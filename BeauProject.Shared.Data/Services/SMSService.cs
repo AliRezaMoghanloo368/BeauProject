@@ -1,9 +1,9 @@
-﻿using BeauProject.Shared.Interfaces;
+﻿using BeauProject.Shared.Application.Interfaces;
 using BeauProject.Shared.Models.SmsKaveneghar;
 using Kavenegar;
 using Microsoft.Extensions.Options;
 
-namespace BeauProject.Shared.Implements
+namespace BeauProject.Shared.Data.Services
 {
     public class SMSService : ISMSService
     {

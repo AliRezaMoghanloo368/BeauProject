@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BeauProject.Identity.Domain\BeauProject.Identity.Domain.csproj" />
+    <ProjectReference Include="..\BeauProject.Shared.Data\BeauProject.Shared.Data.csproj" />
     <ProjectReference Include="..\BeauProject.Shared\BeauProject.Shared.csproj" />
   </ItemGroup>
 

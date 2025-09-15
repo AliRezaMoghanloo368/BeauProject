@@ -1,7 +1,7 @@
-﻿using System.Security.Cryptography;
-using BeauProject.Shared.Interfaces;
+﻿using BeauProject.Shared.Application.Interfaces;
+using System.Security.Cryptography;
 
-namespace BeauProject.Shared.Implements
+namespace BeauProject.Shared.Data.Services
 {
     public class Encrypter : IEncrypter
     {

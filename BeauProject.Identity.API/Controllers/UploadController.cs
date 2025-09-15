@@ -1,4 +1,4 @@
-﻿using BeauProject.Shared.Classes;
+﻿using BeauProject.Shared.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyAssistant.Server.Controllers

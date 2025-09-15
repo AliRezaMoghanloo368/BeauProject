@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using System.Drawing;
 using System.Text;
 
-namespace BeauProject.Shared.Classes
+namespace BeauProject.Shared.Utilities
 {
     public class FileMethods2
     {

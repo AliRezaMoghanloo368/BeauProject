@@ -1,6 +1,6 @@
 ﻿using Microsoft.JSInterop;
 
-namespace BeauProject.Shared.Classes
+namespace BeauProject.Shared.Utilities
 {
     public class InteroptObject
     {

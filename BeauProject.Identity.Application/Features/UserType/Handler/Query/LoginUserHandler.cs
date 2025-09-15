@@ -1,15 +1,11 @@
 ﻿using BeauProject.Identity.Application.Features.UserType.Request.Query;
 using BeauProject.Identity.Application.Interfaces;
 using BeauProject.Identity.Domain.Interfaces;
-using BeauProject.Shared.Extensions;
-using BeauProject.Shared.Interfaces;
+using BeauProject.Shared.Application.Interfaces;
+using BeauProject.Shared.Data.Services;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
 namespace BeauProject.Identity.Application.Features.UserType.Handler.Query
 {

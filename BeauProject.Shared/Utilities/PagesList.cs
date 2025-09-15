@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace BeauProject.Shared.Classes
+namespace BeauProject.Shared.Utilities
 {
     public class PagesList
     {

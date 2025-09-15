@@ -1,4 +1,4 @@
-﻿namespace BeauProject.Shared.Interfaces
+﻿namespace BeauProject.Shared.Application.Interfaces
 {
     public interface IGenericRepository<TEntity> where TEntity : class
     {

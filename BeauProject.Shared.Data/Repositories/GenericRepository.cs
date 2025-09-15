@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using BeauProject.Shared.Interfaces;
+﻿using BeauProject.Shared.Application.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
-namespace BeauProject.Shared.Implements
+namespace BeauProject.Shared.Data.Repositories
 {
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {

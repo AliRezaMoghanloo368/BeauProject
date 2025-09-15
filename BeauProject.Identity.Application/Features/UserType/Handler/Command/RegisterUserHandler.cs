@@ -3,9 +3,9 @@ using BeauProject.Identity.Application.DTOs.User.Validator;
 using BeauProject.Identity.Application.Features.UserType.Request.Command;
 using BeauProject.Identity.Domain.Interfaces;
 using BeauProject.Identity.Domain.Models;
-using BeauProject.Shared.Extensions;
-using BeauProject.Shared.Interfaces;
+using BeauProject.Shared.Application.Interfaces;
 using BeauProject.Shared.Patterns.ResultPattern;
+using BeauProject.Shared.Utilities;
 using MediatR;
 
 namespace BeauProject.Identity.Application.Features.UserType.Handler.Command

@@ -1,4 +1,4 @@
-﻿namespace BeauProject.Shared.Classes
+﻿namespace BeauProject.Shared.Utilities
 {
     public class Enums
     {

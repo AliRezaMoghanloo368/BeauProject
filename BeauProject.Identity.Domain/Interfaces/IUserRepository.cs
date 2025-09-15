@@ -1,5 +1,5 @@
 ﻿using BeauProject.Identity.Domain.Models;
-using BeauProject.Shared.Interfaces;
+using BeauProject.Shared.Application.Interfaces;
 
 namespace BeauProject.Identity.Domain.Interfaces
 {

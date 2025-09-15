@@ -1,7 +1,6 @@
-﻿using BeauProject.Shared.Data.Context;
-using BeauProject.Shared.Domain.Interfaces;
+﻿using BeauProject.Shared.Application.Interfaces;
+using BeauProject.Shared.Data.Context;
 using BeauProject.Shared.Domain.Models;
-using BeauProject.Shared.Implements;
 using Microsoft.EntityFrameworkCore;
 
 namespace BeauProject.Shared.Data.Repositories

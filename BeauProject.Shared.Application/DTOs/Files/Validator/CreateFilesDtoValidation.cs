@@ -1,4 +1,4 @@
-﻿using BeauProject.Shared.Domain.Interfaces;
+﻿using BeauProject.Shared.Application.Interfaces;
 using FluentValidation;
 
 namespace BeauProject.Shared.Application.DTOs.Files.Validator

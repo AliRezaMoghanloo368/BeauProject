@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BeauProject.Shared.Classes
+namespaceBeauProject.Shared.Utilities
 {
     public class Functions
     {

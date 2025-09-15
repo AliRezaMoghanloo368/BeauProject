@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BeauProject.Shared.Exceptions
+﻿namespace BeauProject.Shared.Utilities
 {
     public class ActioException : Exception
     {
@@ -36,7 +32,7 @@ namespace BeauProject.Shared.Exceptions
         }
 
         public ActioException(Exception innerException, string code, string message, params object[] args)
-            : base(string.Format(message,args), innerException)
+            : base(string.Format(message, args), innerException)
         {
             this.Code = code;
         }
