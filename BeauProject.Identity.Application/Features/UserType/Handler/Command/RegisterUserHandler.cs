@@ -4,8 +4,8 @@ using BeauProject.Identity.Application.Features.UserType.Request.Command;
 using BeauProject.Identity.Domain.Interfaces;
 using BeauProject.Identity.Domain.Models;
 using BeauProject.Shared.Application.Interfaces;
+using BeauProject.Shared.Data.Services;
 using BeauProject.Shared.Patterns.ResultPattern;
-using BeauProject.Shared.Utilities;
 using MediatR;
 
 namespace BeauProject.Identity.Application.Features.UserType.Handler.Command
