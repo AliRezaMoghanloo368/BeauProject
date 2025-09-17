@@ -1,6 +1,6 @@
 ﻿using BeauProject.Shared.Domain.Models;
 
-namespace BeauProject.Shared.Application.Interfaces
+namespace BeauProject.Shared.Domain.Interfaces
 {
     public interface IFilesRepository : IGenericRepository<Files>
     {
