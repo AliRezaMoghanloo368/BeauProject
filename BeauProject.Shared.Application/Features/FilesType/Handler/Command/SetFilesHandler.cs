@@ -2,6 +2,7 @@
 using BeauProject.Shared.Application.DTOs.Files.Validator;
 using BeauProject.Shared.Application.Features.FilesType.Request.Command;
 using BeauProject.Shared.Application.Interfaces;
+using BeauProject.Shared.Domain.Interfaces;
 using BeauProject.Shared.Domain.Models;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;

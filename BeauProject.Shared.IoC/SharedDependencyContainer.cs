@@ -3,6 +3,7 @@ using BeauProject.Shared.Application.Interfaces;
 using BeauProject.Shared.Application.Profilers;
 using BeauProject.Shared.Data.Context;
 using BeauProject.Shared.Data.Repositories;
+using BeauProject.Shared.Domain.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

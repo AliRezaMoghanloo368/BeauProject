@@ -1,4 +1,4 @@
-﻿using BeauProject.Shared.Application.Interfaces;
+﻿using BeauProject.Shared.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace BeauProject.Shared.Data.Repositories

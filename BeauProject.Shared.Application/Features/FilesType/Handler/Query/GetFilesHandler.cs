@@ -1,5 +1,6 @@
 ﻿using BeauProject.Shared.Application.Features.FilesType.Request.Query;
 using BeauProject.Shared.Application.Interfaces;
+using BeauProject.Shared.Domain.Interfaces;
 using BeauProject.Shared.Domain.Models;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
