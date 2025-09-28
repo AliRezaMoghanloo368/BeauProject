@@ -1,0 +1,43 @@
+﻿/* glass.css */
+.glass-panel {
+    position: relative;
+    backdrop-filter: blur(8px); /* modern browsers */
+    -webkit-backdrop-filter: blur(8px); /* safari */
+    background: rgba(255,255,255,0.12); /* translucent white */
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    color: #fff; /* text color */
+    overflow: hidden;
+}
+
+    /* fallback for browsers without backdrop-filter */
+    .glass-panel.fallback {
+        background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+        /* optionally add a subtle blur on the element itself (not same effect) */
+        filter: blur(0.2px);
+    }
+
+    /* variant: darker glass */
+    .glass-panel.dark {
+        background: rgba(0,0,0,0.35);
+        border: 1px solid rgba(255,255,255,0.06);
+    }
+
+/* small helper for a translucent page background */
+.app-bg {
+    background-image: url('/images/your-bg.jpg'); /* optional */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+/* responsive tweaks */
+@media (max-width: 600px) {
+    .glass-panel {
+        padding: 14px;
+        border-radius: 12px;
+    }
+}
