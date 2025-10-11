@@ -1,8 +1,4 @@
-﻿using BeauProject.Shared.Implements;
-using BeauProject.Shared.Interfaces;
-//using Microsoft.Extensions.DependencyInjection;
-using System.Text;
-
+﻿//using Microsoft.Extensions.DependencyInjection;
 namespace BeauProject.CRM.IoC
 {
     public static class DependencyContainer
