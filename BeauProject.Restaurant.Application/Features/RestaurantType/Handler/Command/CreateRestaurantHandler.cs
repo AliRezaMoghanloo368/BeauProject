@@ -1,4 +1,4 @@
-﻿using BeauProject.Restaurant.Application.DTOs;
+﻿using BeauProject.Restaurant.Application.DTOs.Restaurant;
 using BeauProject.Restaurant.Application.Features.RestaurantType.Request.Command;
 using BeauProject.Restaurant.Domain.Interfaces;
 using BeauProject.Restaurant.Domain.Models;

@@ -1,4 +1,4 @@
-﻿namespace BeauProject.Restaurant.Application.DTOs
+﻿namespace BeauProject.Restaurant.Application.DTOs.Restaurant
 {
     public class RestaurantDto
     {

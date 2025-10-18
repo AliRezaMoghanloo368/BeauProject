@@ -1,4 +1,4 @@
-﻿using BeauProject.Restaurant.Application.DTOs;
+﻿using BeauProject.Restaurant.Application.DTOs.Restaurant;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
 

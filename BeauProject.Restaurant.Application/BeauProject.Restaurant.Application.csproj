@@ -27,4 +27,5 @@
     <ProjectReference Include="..\BeauProject.Shared\BeauProject.Shared.csproj" />
   </ItemGroup>
 
+  
 </Project>
