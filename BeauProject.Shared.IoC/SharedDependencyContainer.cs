@@ -20,7 +20,7 @@ namespace BeauProject.Shared.IoC
             //service.AddMediatR(Assembly.GetExecutingAssembly());
             //service.AddAutoMapper(Assembly.GetExecutingAssembly());
             service.AddMediatR(typeof(SetFilesHandler).Assembly);
-            service.AddAutoMapper(typeof(AutoMapperProfiler).Assembly);
+            service.AddAutoMapper(typeof(RestaurantAutoMapperProfiler).Assembly);
             #endregion
 
             #region Data Layer

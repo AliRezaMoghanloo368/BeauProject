@@ -11,6 +11,5 @@ namespace BeauComponents.Components.Controls
         [Parameter] public string? IconBoxStyle { get; set; }
         [Parameter] public string? IconTopNavStyle { get; set; }
         [Parameter] public string? IconTitleStyle { get; set; }
-
     }
 }

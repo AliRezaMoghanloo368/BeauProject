@@ -4,9 +4,9 @@ using BeauProject.Shared.Domain.Models;
 
 namespace BeauProject.Shared.Application.Profilers
 {
-    public class AutoMapperProfiler : Profile
+    public class RestaurantAutoMapperProfiler : Profile
     {
-        public AutoMapperProfiler()
+        public RestaurantAutoMapperProfiler()
         {
             CreateMap<Files, CreateFilesDto>().ReverseMap();
             CreateMap<Files, UpdateFilesDto>().ReverseMap();

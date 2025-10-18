@@ -1,19 +1,18 @@
-﻿//using Microsoft.Extensions.DependencyInjection;
-using BeauProject.CRM.Application.Features;
-using BeauProject.CRM.Application.Interfaces;
-using BeauProject.CRM.Data.Repositories;
-using BeauProject.CRM.Domain.Interfaces;
-using BeauProject.Identity.Data.Context;
+﻿using BeauProject.Restaurant.Application.Features.RestaurantType.Handler.Command;
+using BeauProject.Restaurant.Application.Profilers;
+using BeauProject.Restaurant.Data.Context;
+using BeauProject.Restaurant.Data.Repositories;
+using BeauProject.Restaurant.Domain.Interfaces;
 using BeauProject.Shared.Application.Interfaces;
-using BeauProject.Shared.Application.Profilers;
 using BeauProject.Shared.Data.Services;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BeauProject.CRM.IoC
+namespace BeauProject.Restaurant.IoC
 {
-    public static class DependencyContainer
+    public static class RestaurantDependencyContainer
     {
         public static IServiceCollection RegisterServices(this IServiceCollection service,
             IConfiguration configuration)
@@ -21,17 +20,17 @@ namespace BeauProject.CRM.IoC
             #region Application Layer
             //service.AddMediatR(Assembly.GetExecutingAssembly());
             //service.AddAutoMapper(Assembly.GetExecutingAssembly());
-            service.AddScoped<ISPService, SPService>();
+            service.AddMediatR(typeof(CreateRestaurantHandler).Assembly);
             service.AddAutoMapper(typeof(RestaurantAutoMapperProfiler).Assembly);
             #endregion
 
             #region Data Layer
-            service.AddScoped<ISPCRMRepository, SPCRMRepository>();
-            service.AddDbContext<CRMContext>(option =>
-                option.UseSqlServer(configuration.GetConnectionString("BeauManager")));
+            service.AddScoped<IRestaurantRepository, RestaurantRepository>();
+            service.AddDbContext<RestaurantContext>(option =>
+                option.UseSqlServer(configuration.GetConnectionString("Restaurant")));
             #endregion
 
-            #region Shared Layer
+            #region Shared
             service.AddScoped<IEncrypter, Encrypter>();
             #endregion
 
