@@ -1,4 +1,4 @@
-using BeauProject.Identity.IoC;
+using BeauProject.CRM.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 

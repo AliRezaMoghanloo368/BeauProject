@@ -4,10 +4,10 @@ using BeauProject.Shared.Data.Repositories;
 
 namespace BeauProject.CRM.Data.Repositories
 {
-    public class SPAccountingRepository : SPGenericRepository, ISPCRMRepository
+    public class SPCRMRepository : SPGenericRepository, ISPCRMRepository
     {
         private readonly CRMContext _context;
-        public SPAccountingRepository(CRMContext context) : base(context)
+        public SPCRMRepository(CRMContext context) : base(context)
         {
             _context = context;
         }

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BeauProject.CRM.Application\BeauProject.CRM.Application.csproj" />
+    <ProjectReference Include="..\BeauProject.CRM.IoC\BeauProject.CRM.IoC.csproj" />
     <ProjectReference Include="..\BeauProject.Identity.IoC\BeauProject.Identity.IoC.csproj" />
   </ItemGroup>
 
