@@ -25,11 +25,12 @@
 
   <ItemGroup>
     <Folder Include="EntityValidator\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BeauProject.CRM.Application\BeauProject.CRM.Application.csproj" />
     <ProjectReference Include="..\BeauProject.CRM.Domain\BeauProject.CRM.Domain.csproj" />
+    <ProjectReference Include="..\BeauProject.Shared.Data\BeauProject.Shared.Data.csproj" />
     <ProjectReference Include="..\BeauProject.Shared\BeauProject.Shared.csproj" />
   </ItemGroup>
 
