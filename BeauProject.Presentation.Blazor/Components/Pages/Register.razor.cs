@@ -1,7 +1,6 @@
 ﻿using BeauProject.Identity.Application.DTOs.User;
 using BeauProject.Shared.Application.DTOs.Files;
-using BeauProject.Shared.Data.Services;
-using BeauProject.Shared.Domain.Models;
+using BeauProject.Shared.Utilities;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
 
