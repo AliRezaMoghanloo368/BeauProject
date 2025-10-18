@@ -1,10 +1,10 @@
-﻿using BeauProject.CRM.Application.Interfaces;
+﻿using BeauProject.CRM.Domain.Interfaces;
 using BeauProject.Identity.Data.Context;
 using BeauProject.Shared.Data.Repositories;
 
 namespace BeauProject.CRM.Data.Repositories
 {
-    public class SPAccountingRepository : SPGenericRepository, ISPAccountingRepository
+    public class SPAccountingRepository : SPGenericRepository, ISPCRMRepository
     {
         private readonly CRMContext _context;
         public SPAccountingRepository(CRMContext context) : base(context)

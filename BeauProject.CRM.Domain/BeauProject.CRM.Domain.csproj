@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BeauProject.Shared.Domain\BeauProject.Shared.Domain.csproj" />
   </ItemGroup>
 
 </Project>
