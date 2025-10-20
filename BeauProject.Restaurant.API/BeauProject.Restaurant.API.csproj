@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BeauProject.Restaurant.Application\BeauProject.Restaurant.Application.csproj" />
     <ProjectReference Include="..\BeauProject.Restaurant.Data\BeauProject.Restaurant.Data.csproj" />
+    <ProjectReference Include="..\BeauProject.Restaurant.IoC\BeauProject.Restaurant.IoC.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,10 +7,10 @@ namespace BeauProject.Restaurant.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RestaurantsController : ControllerBase
+    public class RestaurantController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public RestaurantsController(IMediator mediator) => _mediator = mediator;
+        public RestaurantController(IMediator mediator) => _mediator = mediator;
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateRestaurantCommand command)

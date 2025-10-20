@@ -13,6 +13,10 @@
       {
         "Path": "BeauProject.UI.App.MAUI.Shared\\BeauProject.UI.App.MAUI.Shared.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "BeauProject.Restaurant.API\\BeauProject.Restaurant.API.csproj",
+        "Action": "Start"
       }
     ]
   }

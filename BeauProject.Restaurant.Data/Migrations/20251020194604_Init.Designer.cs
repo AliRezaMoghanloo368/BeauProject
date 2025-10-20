@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeauProject.Restaurant.Data.Migrations
 {
     [DbContext(typeof(RestaurantContext))]
-    [Migration("20251018195205_Init")]
+    [Migration("20251020194604_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -34,32 +34,34 @@ namespace BeauProject.Restaurant.Data.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Locale")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Phone")
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<long?>("RestaurantEntityId")
-                        .HasColumnType("bigint");
 
                     b.Property<long>("RestaurantId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RestaurantEntityId");
+                    b.HasIndex("RestaurantId");
 
-                    b.ToTable("Branch");
+                    b.ToTable("Branches");
                 });
 
             modelBuilder.Entity("BeauProject.Restaurant.Domain.Models.RestaurantEntity", b =>
@@ -107,14 +109,18 @@ namespace BeauProject.Restaurant.Data.Migrations
                     b.HasIndex("Code")
                         .IsUnique();
 
-                    b.ToTable("Restaurants", (string)null);
+                    b.ToTable("Restaurants");
                 });
 
             modelBuilder.Entity("BeauProject.Restaurant.Domain.Models.Branch", b =>
                 {
-                    b.HasOne("BeauProject.Restaurant.Domain.Models.RestaurantEntity", null)
+                    b.HasOne("BeauProject.Restaurant.Domain.Models.RestaurantEntity", "Restaurant")
                         .WithMany("Branches")
-                        .HasForeignKey("RestaurantEntityId");
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("BeauProject.Restaurant.Domain.Models.RestaurantEntity", b =>

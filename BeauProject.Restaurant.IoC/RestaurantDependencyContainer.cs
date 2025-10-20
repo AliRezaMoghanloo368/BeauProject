@@ -1,4 +1,5 @@
-﻿using BeauProject.Restaurant.Application.Features.RestaurantType.Handler.Command;
+﻿using BeauProject.Restaurant.Application.Features.BranchType.Handle.Command;
+using BeauProject.Restaurant.Application.Features.RestaurantType.Handler.Command;
 using BeauProject.Restaurant.Application.Profilers;
 using BeauProject.Restaurant.Data.Context;
 using BeauProject.Restaurant.Data.Repositories;
@@ -20,8 +21,10 @@ namespace BeauProject.Restaurant.IoC
             #region Application Layer
             //service.AddMediatR(Assembly.GetExecutingAssembly());
             //service.AddAutoMapper(Assembly.GetExecutingAssembly());
+            service.AddMediatR(typeof(CreateBranchHandler).Assembly);
             service.AddMediatR(typeof(CreateRestaurantHandler).Assembly);
-            service.AddAutoMapper(typeof(RestaurantAutoMapperProfiler).Assembly);
+            service.AddAutoMapper(typeof(BranchProfile).Assembly);
+            service.AddAutoMapper(typeof(RestaurantProfile).Assembly);
             #endregion
 
             #region Data Layer

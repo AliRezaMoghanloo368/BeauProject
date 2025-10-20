@@ -13,6 +13,6 @@
         // soft delete
         public bool IsDeleted { get; set; } = false;
 
-        public List<Branch> Branches { get; set; } = new();
+        public ICollection<Branch> Branches { get; set; } = new List<Branch>();
     }
 }

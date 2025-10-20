@@ -8,7 +8,7 @@ namespace BeauProject.Restaurant.Data.EntityValidator
     {
         public void Configure(EntityTypeBuilder<RestaurantEntity> builder)
         {
-            builder.ToTable("Restaurants");
+            //builder.ToTable("Restaurants");
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();

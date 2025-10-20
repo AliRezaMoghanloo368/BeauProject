@@ -10,10 +10,12 @@ namespace BeauProject.Restaurant.Data.Context
             : base(options) { }
 
         public DbSet<RestaurantEntity> Restaurants => Set<RestaurantEntity>();
+        public DbSet<Branch> Branches => Set<Branch>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new RestaurantValidator());
+            modelBuilder.ApplyConfiguration(new BranchValidator());
             base.OnModelCreating(modelBuilder);
         }
     }
