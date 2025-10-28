@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace BeauProject.Restaurant.Application.DTOs.Branch.Validator
 {
-    public class UpdateBranchCommandValidator : AbstractValidator<UpdateBranchCommand>
+    public class UpdateBranchValidator : AbstractValidator<UpdateBranchCommand>
     {
-        public UpdateBranchCommandValidator()
+        public UpdateBranchValidator()
         {
             RuleFor(x => x.Id)
                 .GreaterThan(0).WithMessage("شناسه شعبه معتبر نیست.");

@@ -1,37 +1,35 @@
-﻿using BeauProject.Restaurant.Application.Features.BranchType.Request.Command;
-using BeauProject.Restaurant.Data.Context;
+﻿using AutoMapper;
+using BeauProject.Restaurant.Application.DTOs.Branch.Validator;
+using BeauProject.Restaurant.Application.Features.BranchType.Request.Command;
+using BeauProject.Restaurant.Domain.Interfaces;
 using BeauProject.Restaurant.Domain.Models;
+using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
 
 namespace BeauProject.Restaurant.Application.Features.BranchType.Handle.Command
 {
-    public class CreateBranchHandler : IRequestHandler<CreateBranchCommand, long>
+    public class CreateBranchHandler : IRequestHandler<CreateBranchCommand, Result<bool>>
     {
-        private readonly RestaurantContext _context;
-
-        public CreateBranchHandler(RestaurantContext context)
+        private readonly IMapper _mapper;
+        private readonly IBranchRepository _repo;
+        public CreateBranchHandler(IMapper mapper, IBranchRepository repo)
         {
-            _context = context;
+            _mapper = mapper;
+            _repo = repo;
         }
 
-        public async Task<long> Handle(CreateBranchCommand request, CancellationToken cancellationToken)
+        public async Task<Result<bool>> Handle(CreateBranchCommand request, CancellationToken cancellationToken)
         {
-            var branch = new Branch
+            var valid = new CreateBranchValidator();
+            var branchIsValid = await valid.ValidateAsync(request);
+            if (!branchIsValid.IsValid)
             {
-                RestaurantId = request.RestaurantId,
-                Code = request.Code,
-                Name = request.Name,
-                Locale = request.Locale,
-                Address = request.Address,
-                PhoneNumber = request.PhoneNumber,
-                City = request.City,
-                IsMainBranch = request.IsMainBranch
-            };
+                return Result<bool>.ErrorResult(branchIsValid.Errors.Select(x => x.ErrorMessage).ToList());
+            }
 
-            _context.Branches.Add(branch);
-            await _context.SaveChangesAsync(cancellationToken);
-
-            return branch.Id;
+            var branch = _mapper.Map<Branch>(request);
+            await _repo.Create(branch);
+            return Result<bool>.SuccessResult(true);
         }
     }
 }

@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace BeauProject.Restaurant.Application.DTOs.Restaurant.Validator
 {
-    public class CreateRestaurantValidator : AbstractValidator<CreateRestaurantCommand>
+    public class CreateRestaurantDtoValidator : AbstractValidator<CreateRestaurantCommand>
     {
-        public CreateRestaurantValidator()
+        public CreateRestaurantDtoValidator()
         {
             RuleFor(x => x.Code)
                 .NotEmpty().WithMessage("کد رستوران نمی‌تواند خالی باشد.")

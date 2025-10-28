@@ -1,5 +1,6 @@
 ﻿using BeauProject.Restaurant.Application.Features.BranchType.Request.Command;
 using BeauProject.Restaurant.Application.Features.BranchType.Request.Query;
+using BeauProject.Restaurant.Application.Features.RestaurantType.Request.Command;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -35,5 +36,25 @@ namespace BeauProject.Restaurant.API.Controllers
             var result = await _mediator.Send(command);
             return Ok(result);
         }
+
+        [HttpDelete("{id:long}")]
+        public async Task<IActionResult> Delete(long id)
+        {
+            var result = await _mediator.Send(new DeleteBranchCommand(id));
+            if (!result.Success) return BadRequest(new { error = result.Error });
+            return NoContent();
+        }
     }
 }
+
+//{
+//        "id": 1,
+//        "restaurantId": 1,
+//        "code": "T001",
+//        "name": "Tehran Branch",
+//        "locale": "fa-IR",
+//        "address": "تهران، خیابان آزادی",
+//        "phoneNumber": "0211234567",
+//        "city": "1",
+//        "isMainBranch": false
+//}

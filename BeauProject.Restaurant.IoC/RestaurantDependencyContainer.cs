@@ -29,6 +29,7 @@ namespace BeauProject.Restaurant.IoC
 
             #region Data Layer
             service.AddScoped<IRestaurantRepository, RestaurantRepository>();
+            service.AddScoped<IBranchRepository, BranchRepository>();
             service.AddDbContext<RestaurantContext>(option =>
                 option.UseSqlServer(configuration.GetConnectionString("Restaurant")));
             #endregion

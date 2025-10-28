@@ -4,7 +4,7 @@ using MediatR;
 
 namespace BeauProject.Restaurant.Application.Features.RestaurantType.Request.Query
 {
-    public record GetRestaurantsQuery() : IRequest<Result<List<RestaurantDto>>>
+    public record GetRestaurantsRequest() : IRequest<Result<List<RestaurantDto>>>
     {
     }
 }
