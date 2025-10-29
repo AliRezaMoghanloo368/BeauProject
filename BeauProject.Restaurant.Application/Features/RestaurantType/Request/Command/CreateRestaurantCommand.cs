@@ -4,6 +4,6 @@ using MediatR;
 
 namespace BeauProject.Restaurant.Application.Features.RestaurantType.Request.Command
 {
-    public record CreateRestaurantCommand(string Code, string Name, string DefaultCurrency, string? TimeZone)
+    public record CreateRestaurantCommand(string Code, string Name, string? DefaultCurrency, string? TimeZone)
         : IRequest<Result<RestaurantDto>>;
 }
