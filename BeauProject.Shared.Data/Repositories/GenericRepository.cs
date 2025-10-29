@@ -29,7 +29,7 @@ namespace BeauProject.Shared.Data.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<TEntity> GetAsync(int id)
+        public async Task<TEntity> GetAsync(long id)
         {
             return await _context.Set<TEntity>().FindAsync(id);
         }

@@ -1,11 +1,9 @@
-﻿using BeauProject.Shared.Patterns.ResultPattern;
-using MediatR;
-
-namespace BeauProject.Restaurant.Application.Features.BranchType.Request.Command
+﻿namespace BeauProject.Restaurant.Application.DTOs.Branch
 {
-    public class UpdateBranchCommand : IRequest<Result<bool>>
+    public class CreateBranchDto
     {
-        public long Id { get; set; }
+        public long RestaurantId { get; set; } // FK به Restaurant
+        public string Code { get; set; } = null!;
         public string Name { get; set; } = null!;
         public string? Locale { get; set; } = "fa-IR"; // مثلاً "fa-IR" یا "en-US"
         public string? Address { get; set; }

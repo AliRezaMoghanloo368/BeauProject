@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using BeauProject.Restaurant.Application.DTOs.Restaurant;
+using BeauProject.Restaurant.Application.Features.RestaurantType.Request.Command;
+using BeauProject.Restaurant.Domain.Models;
 
 namespace BeauProject.Restaurant.Application.Profilers
 {
@@ -6,7 +9,8 @@ namespace BeauProject.Restaurant.Application.Profilers
     {
         public RestaurantProfile()
         {
-            //CreateMap<User, GetUserDto>().ReverseMap();
+            CreateMap<RestaurantEntity, CreateRestaurantCommand>().ReverseMap();
+            CreateMap<RestaurantEntity, RestaurantDto>().ReverseMap();
         }
     }
 }

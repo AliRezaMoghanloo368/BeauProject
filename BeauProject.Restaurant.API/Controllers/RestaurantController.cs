@@ -18,23 +18,23 @@ namespace BeauProject.Restaurant.API.Controllers
             var result = await _mediator.Send(command);
             if (!result.Success) return BadRequest(new { error = result.Error });
             // Return 201 + location header
-            var dto = result.Data!;
-            return CreatedAtAction(nameof(GetById), new { id = dto.Id }, dto);
+            //var dto = result.Data!;
+            //return CreatedAtAction(nameof(GetById), new { id = dto.Id }, dto);
+            return Ok(result);
         }
 
         [HttpGet("{id:long}")]
         public async Task<IActionResult> GetById(long id)
         {
-            //var result = await _mediator.Send(new GetRestaurantByIdQuery(id));
-            //if (!result.Succeeded) return NotFound(new { error = result.Error });
-            //return Ok(result.Value);
-            return null;
+            var result = await _mediator.Send(new GetRestaurantRequest { Id = id });
+            if (!result.Success) return NotFound(new { error = result.Error });
+            return Ok(result.Data);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _mediator.Send(new GetRestaurantsQuery());
+            var result = await _mediator.Send(new GetRestaurantsRequest());
             return Ok(result.Data);
         }
 
@@ -56,3 +56,11 @@ namespace BeauProject.Restaurant.API.Controllers
         }
     }
 }
+
+//{
+//        "id": 1,
+//        "code": "R001",
+//        "name": "BeauRestaurant",
+//        "defaultCurrency": "IRR",
+//        "timeZone": "Asia/Tehran"
+//}
