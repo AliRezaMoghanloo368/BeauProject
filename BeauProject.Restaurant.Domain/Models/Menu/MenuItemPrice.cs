@@ -1,8 +1,7 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Menu
 {
-    public class MenuItemPrice
+    public class MenuItemPrice : BaseEntity
     {
-        public long Id { get; set; }
         public long MenuItemId { get; set; }
         public string CurrencyCode { get; set; } = "IRR";
         public decimal Price { get; set; }

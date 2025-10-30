@@ -1,9 +1,8 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Menu
 {
-    public class FoodItem
+    public class FoodItem : BaseEntity
     {
-        public long Id { get; set; }
-        public int CategoryId { get; set; }
+        public long CategoryId { get; set; }
         public long RestaurantId { get; set; }
 
         public string Name { get; set; } = null!;
@@ -21,5 +20,6 @@
         public MenuCategory Category { get; set; } = null!;
         public RestaurantEntity Restaurant { get; set; } = null!;
         public ICollection<FoodAddonOption> AddonOptions { get; set; } = new List<FoodAddonOption>();
+        public ICollection<ModifierGroup> ModifierGroups { get; set; } = new List<ModifierGroup>();
     }
 }

@@ -1,9 +1,8 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Menu
 {
-    public class MenuCategory
+    public class MenuCategory : BaseEntity
     {
-        public int Id { get; set; }
-        public int MenuId { get; set; }
+        public long MenuId { get; set; }
         public string Title { get; set; } = null!;
         public string? Description { get; set; }
         public bool IsActive { get; set; } = true;

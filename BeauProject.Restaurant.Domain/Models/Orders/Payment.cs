@@ -1,8 +1,7 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Orders
 {
-    public class Payment
+    public class Payment : BaseEntity
     {
-        public long Id { get; set; }
         public long OrderId { get; set; }
         public string PaymentProvider { get; set; } = null!;
         public string? ProviderReference { get; set; }

@@ -1,8 +1,7 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Menu
 {
-    public class FoodAddonOption
+    public class FoodAddonOption : BaseEntity
     {
-        public long Id { get; set; }
         public long FoodItemId { get; set; }
 
         public string Name { get; set; } = null!;

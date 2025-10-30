@@ -1,8 +1,7 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Inventory
 {
-    public class StockMovement
+    public class StockMovement : BaseEntity
     {
-        public long Id { get; set; }
         public long InventoryItemId { get; set; }
         public decimal Quantity { get; set; }
         public string MovementType { get; set; } = null!; // Purchase, Consumption

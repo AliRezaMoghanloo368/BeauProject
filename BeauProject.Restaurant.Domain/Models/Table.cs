@@ -1,8 +1,7 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models
 {
-    public class Table
+    public class Table : BaseEntity
     {
-        public long Id { get; set; }
         public long BranchId { get; set; }
         public string TableCode { get; set; } = null!;
         public int Capacity { get; set; }

@@ -15,9 +15,8 @@
         Cancelled
     }
 
-    public class Order
+    public class Order : BaseEntity
     {
-        public long Id { get; set; }
         public long BranchId { get; set; }
         public long? CustomerId { get; set; }
         public string OrderNumber { get; set; } = null!;

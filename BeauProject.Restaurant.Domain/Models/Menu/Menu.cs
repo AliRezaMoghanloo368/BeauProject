@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BeauProject.Restaurant.Domain.Models.Menu
+﻿namespace BeauProject.Restaurant.Domain.Models.Menu
 {
-    public class Menu
+    public class Menu : BaseEntity
     {
-        public int Id { get; set; }
         public long RestaurantId { get; set; }
 
         public string Title { get; set; } = null!;

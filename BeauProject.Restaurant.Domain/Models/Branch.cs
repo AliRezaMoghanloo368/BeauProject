@@ -1,9 +1,7 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models
 {
-    public class Branch
+    public class Branch : BaseEntity
     {
-        public long Id { get; set; }
-
         public long RestaurantId { get; set; }   // FK به Restaurant
         public string Code { get; set; } = null!;
         public string Name { get; set; } = null!;

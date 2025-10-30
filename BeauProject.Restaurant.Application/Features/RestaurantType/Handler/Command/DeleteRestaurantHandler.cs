@@ -15,7 +15,6 @@ namespace BeauProject.Restaurant.Application.Features.RestaurantType.Handler.Com
             var entity = await _repo.GetAsync(request.Id);
             if (entity is null) return Result<bool>.ErrorResult("Restaurant not found.");
             entity.IsDeleted = true;
-            entity.UpdatedAt = DateTime.UtcNow;
             await _repo.Update(entity);
             return Result<bool>.SuccessResult(true);
         }

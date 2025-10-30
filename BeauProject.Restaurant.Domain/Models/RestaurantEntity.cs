@@ -2,9 +2,8 @@
 
 namespace BeauProject.Restaurant.Domain.Models
 {
-    public class RestaurantEntity
+    public class RestaurantEntity : BaseEntity
     {
-        public long Id { get; set; }
         public string Code { get; set; } = null!;
         public string Name { get; set; } = null!;
         public string DefaultCurrency { get; set; } = "IRR";

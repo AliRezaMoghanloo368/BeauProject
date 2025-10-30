@@ -1,8 +1,7 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Inventory
 {
-    public class InventoryItem
+    public class InventoryItem : BaseEntity
     {
-        public long Id { get; set; }
         public long RestaurantId { get; set; }
         public string Name { get; set; } = null!;
         public string? Unit { get; set; }

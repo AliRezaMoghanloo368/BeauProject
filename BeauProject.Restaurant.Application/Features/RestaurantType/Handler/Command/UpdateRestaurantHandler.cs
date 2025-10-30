@@ -34,7 +34,6 @@ namespace BeauProject.Restaurant.Application.Features.RestaurantType.Handler.Com
             entity.Name = request.Name;
             entity.DefaultCurrency = request.DefaultCurrency;
             entity.TimeZone = request.TimeZone;
-            entity.UpdatedAt = DateTime.UtcNow;
 
             var rest = _mapper.Map<RestaurantEntity>(entity);
             await _repo.Update(entity);
