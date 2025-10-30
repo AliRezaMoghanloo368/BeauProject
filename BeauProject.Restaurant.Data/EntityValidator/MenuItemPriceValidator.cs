@@ -18,7 +18,7 @@ namespace BeauProject.Restaurant.Data.EntityValidator
                 .HasDefaultValue("IRR");
 
             builder.Property(x => x.Price)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(18,4)");
 
             builder.Property(x => x.StartAt)
                 .HasDefaultValueSql("GETUTCDATE()");

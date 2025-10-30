@@ -17,7 +17,7 @@ namespace BeauProject.Restaurant.Data.EntityValidator
                 .HasMaxLength(100);
 
             builder.Property(x => x.Price)
-                .HasColumnType("decimal(18,2)");
+                .HasColumnType("decimal(18,4)");
 
             builder.Property(x => x.IsActive)
                 .HasDefaultValue(true);
