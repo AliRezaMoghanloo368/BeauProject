@@ -1,4 +1,5 @@
 ﻿using BeauProject.Restaurant.Application.Features.BranchType.Handle.Command;
+using BeauProject.Restaurant.Application.Features.FoodItemsType.Handler.Command;
 using BeauProject.Restaurant.Application.Features.RestaurantType.Handler.Command;
 using BeauProject.Restaurant.Application.Profilers;
 using BeauProject.Restaurant.Data.Context;
@@ -23,13 +24,16 @@ namespace BeauProject.Restaurant.IoC
             //service.AddAutoMapper(Assembly.GetExecutingAssembly());
             service.AddMediatR(typeof(CreateBranchHandler).Assembly);
             service.AddMediatR(typeof(CreateRestaurantHandler).Assembly);
+            service.AddMediatR(typeof(CreateFoodItemHandler).Assembly);
             service.AddAutoMapper(typeof(BranchProfile).Assembly);
             service.AddAutoMapper(typeof(RestaurantProfile).Assembly);
+            service.AddAutoMapper(typeof(FoodItemProfile).Assembly);
             #endregion
 
             #region Data Layer
             service.AddScoped<IRestaurantRepository, RestaurantRepository>();
             service.AddScoped<IBranchRepository, BranchRepository>();
+            service.AddScoped<IFoodItemRepository, FoodItemRepository>();
             service.AddDbContext<RestaurantContext>(option =>
                 option.UseSqlServer(configuration.GetConnectionString("Restaurant")));
             #endregion

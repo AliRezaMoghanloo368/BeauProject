@@ -1,6 +1,5 @@
 ﻿using BeauProject.Restaurant.Application.Features.BranchType.Request.Command;
 using BeauProject.Restaurant.Application.Features.BranchType.Request.Query;
-using BeauProject.Restaurant.Application.Features.RestaurantType.Request.Command;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,10 +7,10 @@ namespace BeauProject.Restaurant.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BranchesController : ControllerBase
+    public class BranchController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public BranchesController(IMediator mediator) => _mediator = mediator;
+        public BranchController(IMediator mediator) => _mediator = mediator;
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateBranchCommand command)

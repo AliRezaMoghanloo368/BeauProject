@@ -41,7 +41,12 @@ namespace BeauProject.Shared.Data.Repositories
 
         public async Task<IQueryable<TEntity>> GetAll()
         {
-            return _context.Set<TEntity>().AsQueryable().AsNoTracking();
+            IQueryable<TEntity> result = null!;
+            await Task.Run(() =>
+            {
+                result = _context.Set<TEntity>().AsQueryable().AsNoTracking();
+            });
+            return result;
         }
     }
 }

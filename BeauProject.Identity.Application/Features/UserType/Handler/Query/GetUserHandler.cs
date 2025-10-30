@@ -2,10 +2,6 @@
 using BeauProject.Identity.Application.DTOs.User;
 using BeauProject.Identity.Application.Features.UserType.Request.Query;
 using BeauProject.Identity.Domain.Interfaces;
-using BeauProject.Identity.Domain.Models;
-using BeauProject.Shared.Domain.Models;
-using BeauProject.Shared.Patterns.ResultPattern;
-using DocumentFormat.OpenXml.Wordprocessing;
 using MediatR;
 
 namespace BeauProject.Identity.Application.Features.UserType.Handler.Query
