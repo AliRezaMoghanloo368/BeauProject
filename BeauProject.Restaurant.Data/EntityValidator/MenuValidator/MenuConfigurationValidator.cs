@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BeauProject.Restaurant.Data.EntityValidator
+namespace BeauProject.Restaurant.Data.EntityValidator.MenuValidator
 {
     public class MenuConfigurationValidator : IEntityTypeConfiguration<Menu>
     {

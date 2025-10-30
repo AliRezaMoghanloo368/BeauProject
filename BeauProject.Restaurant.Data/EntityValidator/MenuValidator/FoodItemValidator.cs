@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BeauProject.Restaurant.Data.EntityValidator
+namespace BeauProject.Restaurant.Data.EntityValidator.MenuValidator
 {
     public class FoodItemValidator : IEntityTypeConfiguration<FoodItem>
     {
