@@ -28,6 +28,10 @@ namespace BeauProject.Restaurant.Data.EntityValidator
                 .WithMany(r => r.Branches)
                 .HasForeignKey(b => b.RestaurantId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
+            builder.HasQueryFilter(x => !x.IsDeleted);
         }
     }
 }

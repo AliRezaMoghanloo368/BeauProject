@@ -12,9 +12,13 @@
         public string? PhoneNumber { get; set; }
         public string City { get; set; } = null!;
         public bool IsMainBranch { get; set; }
-        //public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        // soft delete
+        public bool IsDeleted { get; set; } = false;
 
         // Navigation Property
         public RestaurantEntity Restaurant { get; set; } = null!;
+        public ICollection<Table> Tables { get; set; } = new List<Table>();
     }
 }
