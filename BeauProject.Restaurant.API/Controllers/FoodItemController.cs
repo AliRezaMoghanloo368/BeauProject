@@ -15,7 +15,7 @@ namespace BeauProject.Restaurant.API.Controllers
         public FoodItemController(IMediator mediator) => _mediator = mediator;
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateFoodItemRequest request)
+        public async Task<IActionResult> Create([FromBody] CreateModifierGroupRequest request)
         {
             var id = await _mediator.Send(request);
             return Ok(new { Id = id });
@@ -24,19 +24,19 @@ namespace BeauProject.Restaurant.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var items = await _mediator.Send(new GetAllFoodItemRequest());
+            var items = await _mediator.Send(new GetAllModifierGroupRequest());
             return Ok(items);
         }
 
         [HttpGet("foodItem/{id:long}")]
         public async Task<IActionResult> GetAsync(long id)
         {
-            var result = await _mediator.Send(new GetFoodItemRequest(id));
+            var result = await _mediator.Send(new GetModifierGroupRequest(id));
             return Ok(result);
         }
 
         [HttpPut("{id:long}")]
-        public async Task<IActionResult> Update(long id, [FromBody] UpdateFoodItemRequest request)
+        public async Task<IActionResult> Update(long id, [FromBody] UpdateModifierGroupRequest request)
         {
             if (id != request.UpdateFoodItemDto.Id)
                 return BadRequest("شناسه ارسالی با بدنه درخواست مطابقت ندارد.");
@@ -48,7 +48,7 @@ namespace BeauProject.Restaurant.API.Controllers
         [HttpDelete("{id:long}")]
         public async Task<IActionResult> Delete(long id)
         {
-            var result = await _mediator.Send(new DeleteFoodItemRequest(id));
+            var result = await _mediator.Send(new DeleteModifierGroupRequest(id));
             if (!result.Success) return BadRequest(new { error = result.Error });
             return NoContent();
         }

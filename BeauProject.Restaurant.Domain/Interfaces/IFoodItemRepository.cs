@@ -5,7 +5,7 @@ namespace BeauProject.Restaurant.Domain.Interfaces
 {
     public interface IFoodItemRepository : IGenericRepository<FoodItem>
     {
-        Task<FoodItem?> GetFoodItemAsync(long id);
-        Task<IQueryable<FoodItem?>> GetAllFoodItem();
+        Task<FoodItem?> GetFoodItemByIdAsync(long id);
+        Task<IQueryable<FoodItem?>> GetAllFoodItemAsync();
     }
 }

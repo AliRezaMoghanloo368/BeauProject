@@ -21,7 +21,7 @@ namespace BeauProject.Restaurant.Application.Features.FoodItemsType.Handler.Comm
                 return Result<bool>.ErrorResult(isValid.Errors.Select(x => x.ErrorMessage).ToList());
             }
 
-            var entity = await _repo.GetFoodItemAsync(request.UpdateFoodItemDto.Id);
+            var entity = await _repo.GetFoodItemByIdAsync(request.UpdateFoodItemDto.Id);
             entity.Currency = request.UpdateFoodItemDto.Currency;
             entity.Price = request.UpdateFoodItemDto.Price;
             entity.Name = request.UpdateFoodItemDto.Name;

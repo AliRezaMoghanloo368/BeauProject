@@ -14,14 +14,14 @@ namespace BeauProject.Restaurant.Data.Repositories
             _ctx = ctx;
         }
 
-        public async Task<FoodItem?> GetFoodItemAsync(long id)
+        public async Task<FoodItem?> GetFoodItemByIdAsync(long id)
         {
             return await _ctx.FoodItems.Include(f => f.AddonOptions)
                                        .Include(f => f.Category)
                                        .FirstOrDefaultAsync(f => f.Id == id);
         }
 
-        public async Task<IQueryable<FoodItem?>> GetAllFoodItem()
+        public async Task<IQueryable<FoodItem?>> GetAllFoodItemAsync()
         {
             IQueryable<FoodItem?> result = null!;
             await Task.Run(() =>

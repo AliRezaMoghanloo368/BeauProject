@@ -20,7 +20,7 @@ namespace BeauProject.Restaurant.Application.Features.FoodItemsType.Handler.Quer
 
         public async Task<Result<FoodItemDto>> Handle(GetFoodItemRequest request, CancellationToken cancellationToken)
         {
-            var food = await _repo.GetFoodItemAsync(request.Id);
+            var food = await _repo.GetFoodItemByIdAsync(request.Id);
             if (food == null)
             {
                 food = new FoodItem();
