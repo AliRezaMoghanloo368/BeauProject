@@ -19,9 +19,11 @@ namespace BeauProject.Shared.Data.Repositories
             using (var connection = _context.Database.GetDbConnection())
             {
                 await connection.OpenAsync();
-                using var command = connection.CreateCommand();
-                command.CommandText = query;
-                dt.Load(await command.ExecuteReaderAsync());
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = query;
+                    dt.Load(await command.ExecuteReaderAsync());
+                }
 
                 // تبدیل DataTable به List<Dictionary<string, object>> برای JSON
                 var list = new List<Dictionary<string, object>>();
