@@ -52,3 +52,18 @@ namespace BeauProject.Restaurant.API.Controllers
         }
     }
 }
+
+
+//{
+//    "createModifierGroupDto": {
+//        "menuItemId": 2,
+//    "name": "Pizza Toppings",
+//    "minSelection": 1,
+//    "maxSelection": 3,
+//    "modifiers": [
+//      { "name": "Extra Cheese", "price": 5.0, "trackInventory": false },
+//      { "name": "Olives", "price": 3.5, "trackInventory": false },
+//      { "name": "Mushrooms", "price": 4.0, "trackInventory": false }
+//    ]
+//  }
+//}

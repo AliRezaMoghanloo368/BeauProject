@@ -10,7 +10,7 @@ namespace BeauProject.Restaurant.Application.Profilers
         public FoodItemProfile()
         {
             CreateMap<FoodItem, FoodItemDto>().ReverseMap();
-            CreateMap<FoodItem, CreateFoodItemRequest>().ReverseMap();
+            CreateMap<FoodItem, CreateFoodItemDto>().ReverseMap();
         }
     }
 }
