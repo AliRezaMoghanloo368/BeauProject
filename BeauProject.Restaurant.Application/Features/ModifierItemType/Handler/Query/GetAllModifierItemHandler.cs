@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BeauProject.Restaurant.Application.DTOs.ModifierItem;
 using BeauProject.Restaurant.Application.Features.ModifierItemType.Request.Query;
+using BeauProject.Restaurant.Domain.Interfaces;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
 
@@ -18,7 +19,7 @@ namespace BeauProject.Restaurant.Application.Features.ModifierItemType.Handler.Q
 
         public async Task<Result<IQueryable<ModifierItemDto>>> Handle(GetAllModifierItemRequest request, CancellationToken cancellationToken)
         {
-            var foods = await _repo.GetAllModifierItem();
+            var foods = await _repo.GetAll();
 
             var dto = _mapper.Map<IQueryable<ModifierItemDto>>(foods);
             return Result<IQueryable<ModifierItemDto>>.SuccessResult(dto, "عملیات با موفقیت انجام شد.");

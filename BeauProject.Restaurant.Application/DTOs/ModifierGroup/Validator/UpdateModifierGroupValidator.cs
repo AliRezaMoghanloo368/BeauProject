@@ -1,4 +1,4 @@
-﻿using BeauProject.Restaurant.Application.Features.FoodItemsType.Request.Command;
+﻿using BeauProject.Restaurant.Application.Features.ModifierGroupType.Request.Command;
 using FluentValidation;
 
 namespace BeauProject.Restaurant.Application.DTOs.ModifierGroup.Validator

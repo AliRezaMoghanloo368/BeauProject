@@ -1,7 +1,5 @@
-﻿using BeauProject.Restaurant.Application.Features.BranchType.Request.Query;
-using BeauProject.Restaurant.Application.Features.FoodItemsType.Request.Command;
-using BeauProject.Restaurant.Application.Features.FoodItemsType.Request.Query;
-using BeauProject.Restaurant.Application.Features.RestaurantType.Request.Query;
+﻿using BeauProject.Restaurant.Application.Features.ModifierGroupType.Request.Command;
+using BeauProject.Restaurant.Application.Features.ModifierGroupType.Request.Query;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,7 +36,7 @@ namespace BeauProject.Restaurant.API.Controllers
         [HttpPut("{id:long}")]
         public async Task<IActionResult> Update(long id, [FromBody] UpdateModifierGroupRequest request)
         {
-            if (id != request.UpdateFoodItemDto.Id)
+            if (id != request.UpdateModifierGroupDto.Id)
                 return BadRequest("شناسه ارسالی با بدنه درخواست مطابقت ندارد.");
 
             var result = await _mediator.Send(request);

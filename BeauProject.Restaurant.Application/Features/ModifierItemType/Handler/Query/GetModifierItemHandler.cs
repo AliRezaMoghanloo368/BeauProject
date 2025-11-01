@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BeauProject.Restaurant.Application.DTOs.ModifierItem;
 using BeauProject.Restaurant.Application.Features.ModifierItemType.Request.Query;
+using BeauProject.Restaurant.Domain.Interfaces;
 using BeauProject.Restaurant.Domain.Models.Menu;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
@@ -19,7 +20,7 @@ namespace BeauProject.Restaurant.Application.Features.ModifierItemType.Handler.Q
 
         public async Task<Result<ModifierItemDto>> Handle(GetModifierItemRequest request, CancellationToken cancellationToken)
         {
-            var food = await _repo.GetModifierItemAsync(request.Id);
+            var food = await _repo.GetAsync(request.Id);
             if (food == null)
             {
                 food = new ModifierItem();

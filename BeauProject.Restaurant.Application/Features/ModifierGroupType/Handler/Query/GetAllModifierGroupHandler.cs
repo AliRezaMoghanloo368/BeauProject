@@ -20,18 +20,7 @@ namespace BeauProject.Restaurant.Application.Features.ModifierGroupType.Handler.
 
         public async Task<Result<IQueryable<ModifierGroupDto>>> Handle(GetAllModifierGroupRequest request, CancellationToken cancellationToken)
         {
-            var foods = await _repo.GetAllModifierGroup();
-            //var foodDto = foods.Select(x => new ModifierGroupDto
-            //{
-            //    Name = x.Name,
-            //    Description = x.Description,
-            //    Id = x.Id,
-            //    Calories = x.Calories,
-            //    CategoryId = x.CategoryId,
-            //    Currency = x.Currency,
-            //    IsAvailable = x.IsAvailable,
-            //    Price = x.Price,   
-            //});
+            var foods = await _repo.GetAllModifierGroupAsync();
 
             var dto = _mapper.Map<IQueryable<ModifierGroupDto>>(foods);
             return Result<IQueryable<ModifierGroupDto>>.SuccessResult(dto, "عملیات با موفقیت انجام شد.");

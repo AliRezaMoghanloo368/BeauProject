@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BeauProject.Restaurant.Application.DTOs.ModifierGroup;
 using BeauProject.Restaurant.Application.Features.ModifierGroupType.Request.Query;
+using BeauProject.Restaurant.Domain.Interfaces;
 using BeauProject.Restaurant.Domain.Models.Menu;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
@@ -19,7 +20,7 @@ namespace BeauProject.Restaurant.Application.Features.ModifierGroupType.Handler.
 
         public async Task<Result<ModifierGroupDto>> Handle(GetModifierGroupRequest request, CancellationToken cancellationToken)
         {
-            var food = await _repo.GetModifierGroupAsync(request.Id);
+            var food = await _repo.GetModifierGroupByIdAsync(request.Id);
             if (food == null)
             {
                 food = new ModifierGroup();

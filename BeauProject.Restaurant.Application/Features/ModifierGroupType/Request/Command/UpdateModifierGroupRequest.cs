@@ -1,11 +1,11 @@
-﻿using BeauProject.Restaurant.Application.DTOs.ModifierItem;
+﻿using BeauProject.Restaurant.Application.DTOs.ModifierGroup;
 using BeauProject.Shared.Patterns.ResultPattern;
 using MediatR;
 
-namespace BeauProject.Restaurant.Application.Features.ModifierGItemType.Request.Command
+namespace BeauProject.Restaurant.Application.Features.ModifierGroupType.Request.Command
 {
-    public class UpdateModifierGItemRequest : IRequest<Result<bool>>
+    public class UpdateModifierGroupRequest : IRequest<Result<bool>>
     {
-        public UpdateModifierItemDto UpdateModifierItemDto { get; set; }
+        public UpdateModifierGroupDto UpdateModifierGroupDto { get; set; }
     }
 }
