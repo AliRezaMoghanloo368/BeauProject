@@ -1,8 +1,7 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Orders
 {
-    public class OrderItem
+    public class OrderItem : BaseEntity
     {
-        public long Id { get; set; }
         public long OrderId { get; set; }
         public long MenuItemId { get; set; }
         public int Quantity { get; set; } = 1;

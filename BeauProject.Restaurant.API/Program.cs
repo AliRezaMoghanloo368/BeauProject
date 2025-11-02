@@ -1,4 +1,5 @@
 ﻿using BeauProject.Restaurant.Data.Context;
+using BeauProject.Restaurant.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 

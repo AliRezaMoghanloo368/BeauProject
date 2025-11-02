@@ -8,7 +8,7 @@ namespace BeauProject.Restaurant.Data.EntityValidator
     {
         public void Configure(EntityTypeBuilder<RestaurantEntity> builder)
         {
-            builder.ToTable("Restaurants");
+            //builder.ToTable("Restaurants");
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
@@ -30,9 +30,10 @@ namespace BeauProject.Restaurant.Data.EntityValidator
             builder.Property(x => x.TimeZone).HasMaxLength(50);
 
             builder.Property(x => x.CreatedAt).HasDefaultValueSql("SYSUTCDATETIME()");
-            builder.Property(x => x.UpdatedAt).IsRequired(false);
 
             builder.Property(x => x.IsDeleted).HasDefaultValue(false);
+
+            builder.HasQueryFilter(x => !x.IsDeleted);
         }
     }
 }

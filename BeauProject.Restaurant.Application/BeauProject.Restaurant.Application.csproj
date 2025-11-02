@@ -8,10 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Contracts\" />
-    <Folder Include="Features\MenuItems\Commands\" />
-    <Folder Include="Features\MenuItems\Mappings\" />
-    <Folder Include="Features\MenuItems\Queries\" />
-    <Folder Include="Features\Orders\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,8 @@
-﻿using BeauProject.Restaurant.Application.Features.RestaurantType.Handler.Command;
+﻿using BeauProject.Restaurant.Application.Features.BranchType.Handle.Command;
+using BeauProject.Restaurant.Application.Features.FoodItemsType.Handler.Command;
+using BeauProject.Restaurant.Application.Features.ModifierGroupType.Handler.Command;
+using BeauProject.Restaurant.Application.Features.ModifierItemType.Handler.Command;
+using BeauProject.Restaurant.Application.Features.RestaurantType.Handler.Command;
 using BeauProject.Restaurant.Application.Profilers;
 using BeauProject.Restaurant.Data.Context;
 using BeauProject.Restaurant.Data.Repositories;
@@ -20,12 +24,24 @@ namespace BeauProject.Restaurant.IoC
             #region Application Layer
             //service.AddMediatR(Assembly.GetExecutingAssembly());
             //service.AddAutoMapper(Assembly.GetExecutingAssembly());
+            service.AddMediatR(typeof(CreateBranchHandler).Assembly);
             service.AddMediatR(typeof(CreateRestaurantHandler).Assembly);
-            service.AddAutoMapper(typeof(RestaurantAutoMapperProfiler).Assembly);
+            service.AddMediatR(typeof(CreateFoodItemHandler).Assembly);
+            service.AddMediatR(typeof(CreateModifierGroupHandler).Assembly);
+            service.AddMediatR(typeof(CreateModifierItemHandler).Assembly);
+            service.AddAutoMapper(typeof(BranchProfile).Assembly);
+            service.AddAutoMapper(typeof(RestaurantProfile).Assembly);
+            service.AddAutoMapper(typeof(FoodItemProfile).Assembly);
+            service.AddAutoMapper(typeof(ModifierGroupProfile).Assembly);
+            service.AddAutoMapper(typeof(ModifierItemProfile).Assembly);
             #endregion
 
             #region Data Layer
             service.AddScoped<IRestaurantRepository, RestaurantRepository>();
+            service.AddScoped<IBranchRepository, BranchRepository>();
+            service.AddScoped<IFoodItemRepository, FoodItemRepository>();
+            service.AddScoped<IModifierGroupRepository, ModifierGroupRepository>();
+            service.AddScoped<IModifierItemRepository, ModifierItemRepository>();
             service.AddDbContext<RestaurantContext>(option =>
                 option.UseSqlServer(configuration.GetConnectionString("Restaurant")));
             #endregion

@@ -1,8 +1,7 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Menu
 {
-    public class ModifierGroup
+    public class ModifierGroup : BaseEntity
     {
-        public long Id { get; set; }
         public long MenuItemId { get; set; }
         public string Name { get; set; } = null!;
         public int MinSelection { get; set; } = 0;

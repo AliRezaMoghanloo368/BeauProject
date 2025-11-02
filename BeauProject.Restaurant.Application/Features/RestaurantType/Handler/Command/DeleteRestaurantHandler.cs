@@ -10,14 +10,12 @@ namespace BeauProject.Restaurant.Application.Features.RestaurantType.Handler.Com
         private readonly IRestaurantRepository _repo;
         public DeleteRestaurantHandler(IRestaurantRepository repo) => _repo = repo;
 
-        public async Task<Result<bool>> Handle(DeleteRestaurantCommand req, CancellationToken ct)
+        public async Task<Result<bool>> Handle(DeleteRestaurantCommand request, CancellationToken ct)
         {
-            var entity = await _repo.GetByIdAsync(req.Id, ct);
+            var entity = await _repo.GetAsync(request.Id);
             if (entity is null) return Result<bool>.ErrorResult("Restaurant not found.");
             entity.IsDeleted = true;
-            entity.UpdatedAt = DateTime.UtcNow;
-            await _repo.UpdateAsync(entity);
-            await _repo.SaveChangesAsync(ct);
+            await _repo.Update(entity);
             return Result<bool>.SuccessResult(true);
         }
     }
