@@ -1,22 +1,36 @@
 ﻿@page "/"
 @using BeauComponents.Components.Controls
 @using System.Data
+@using BeauComponents.Components.Controls.Tab
 @using static BeauComponents.Components.Classes.BeauEnums
 @inject IJSRuntime _js;
 
 <PageTitle>Home</PageTitle>
+@* 
+<h1>Hello, world!</h1> *@
 
-<h1>Hello, world!</h1>
+@* <BeauGridView Name="grid-view" DataTable="BindDt()" OnClickRow="(n) => { Clicked(n, false); }"
+              Editable="true" /> *@
 
-<BeauGridView Name="grid-view" DataTable="BindDt()" OnClickRow="(n) => { Clicked(n, false); }"
-              Editable="true" />
+<TabSet>
+    <TabBox Title="تب اول">
+        <p>محتوای تب اول</p>
+    </TabBox>
+    <TabBox Title="تب دوم">
+        <p>محتوای تب دوم</p>
+    </TabBox>
+    <TabBox Title="تب سوم">
+        <p>محتوای تب سوم</p>
+    </TabBox>
+</TabSet>
+@* 
 <div>
     <svg class="loading-progress">
         <circle r="40%" cx="50%" cy="50%" />
         <circle r="40%" cx="50%" cy="50%" />
     </svg>
     <div class="loading-progress-text"></div>
-</div>
+</div> *@
 
 
 @code {
@@ -62,4 +76,9 @@
         this.StateHasChanged();
     }
     #endregion
+
+    private void TabActivated(string title)
+    {
+        Console.WriteLine($"تب فعال: {title}");
+    }
 }
