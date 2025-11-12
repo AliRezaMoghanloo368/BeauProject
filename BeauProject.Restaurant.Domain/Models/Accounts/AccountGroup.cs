@@ -1,9 +1,8 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Accounts
 {
     // حساب کل
-    public class AccountGroup
+    public class AccountGroup : BaseEntity
     {
-        public int Id { get; set; }
         public string Code { get; set; } = null!;
         public bool IsActive { get; set; } = true;
 

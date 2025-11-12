@@ -1,0 +1,644 @@
+﻿.android-table {
+    width: 100%;
+    border-collapse: separate; /* برای حاشیه‌های rounded */
+    border-spacing: 0 8px; /* فاصله بین ردیف‌ها */
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: #f5f5f5;
+}
+
+    .android-table thead th {
+        background-color: #6200ea; /* رنگ اصلی اندروید متریال */
+        color: white;
+        text-align: center;
+        padding: 12px;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .android-table tbody tr {
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .android-table tbody tr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+    .android-table tbody td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .android-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .android-table tbody tr td:nth-child(5) {
+        font-weight: bold;
+        color: #388e3c; /* سبز برای موجود */
+    }
+
+        .android-table tbody tr td:nth-child(5):contains('ناموجود') {
+            color: #d32f2f; /* قرمز برای ناموجود */
+        }
+
+
+.mac-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
+    font-size: 14px;
+    background-color: #f5f5f7; /* رنگ پس‌زمینه روشن مشابه مک */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+    .mac-table thead th {
+        background-color: #f0f0f5; /* رنگ روشن برای هدر */
+        color: #333;
+        text-align: left;
+        padding: 12px 16px;
+        border-radius: 10px 10px 0 0;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .mac-table tbody tr {
+        background-color: white;
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+        .mac-table tbody tr:hover {
+            background-color: #e0e0e5; /* رنگ روشن برای هور */
+            transform: translateY(-2px);
+        }
+
+    .mac-table tbody td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .mac-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .mac-table tbody td:nth-child(5) {
+        font-weight: bold;
+        color: #007aff; /* رنگ آبی برای موجود */
+    }
+
+    .mac-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #ff3b30; /* قرمز برای ناموجود */
+    }
+
+
+.mac-dark-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
+    font-size: 14px;
+    background-color: #1e1e1e; /* رنگ پس‌زمینه تیره */
+    color: #e0e0e0; /* متن روشن */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+    .mac-dark-table thead th {
+        background-color: #333333; /* هدر تیره */
+        color: #ffffff; /* رنگ متن سفید برای هدر */
+        text-align: left;
+        padding: 12px 16px;
+        border-radius: 10px 10px 0 0;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .mac-dark-table tbody tr {
+        background-color: #2c2c2c; /* پس‌زمینه تیره برای ردیف‌ها */
+        transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+        .mac-dark-table tbody tr:hover {
+            background-color: #3c3c3c; /* رنگ روشن برای هور */
+            transform: translateY(-2px);
+        }
+
+    .mac-dark-table tbody td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #444444; /* مرز زیرین با رنگ تیره‌تر */
+    }
+
+    .mac-dark-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .mac-dark-table tbody td:nth-child(5) {
+        font-weight: bold;
+        color: #34c759; /* سبز برای موجود */
+    }
+
+    .mac-dark-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #ff3b30; /* قرمز برای ناموجود */
+    }
+
+.ubuntu-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 14px;
+    background-color: #fdfdfd; /* پس‌زمینه روشن */
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+    .ubuntu-table thead th {
+        background-color: #dd4814; /* رنگ نارنجی Ubuntu */
+        color: white;
+        text-align: left;
+        padding: 12px 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .ubuntu-table tbody tr {
+        background-color: #ffffff;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+        .ubuntu-table tbody tr:hover {
+            background-color: #f8f8f8; /* رنگ ملایم هنگام هاور */
+            transform: translateY(-2px);
+        }
+
+    .ubuntu-table tbody td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .ubuntu-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .ubuntu-table tbody td:nth-child(5) {
+        font-weight: bold;
+        color: #2e7d32; /* سبز برای موجود */
+    }
+
+    .ubuntu-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #c62828; /* قرمز برای ناموجود */
+    }
+
+
+.ios-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* فاصله بین ردیف‌ها برای حس آی‌اواس */
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", sans-serif;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+    .ios-table thead th {
+        background-color: #ffffff;
+        color: #333333;
+        text-align: left;
+        padding: 12px 16px;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .ios-table tbody tr {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+        .ios-table tbody tr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+        }
+
+    .ios-table tbody td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .ios-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .ios-table tbody td:nth-child(5) {
+        font-weight: 600;
+        color: #34c759; /* سبز برای موجود */
+    }
+
+    .ios-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #ff3b30; /* قرمز برای ناموجود */
+    }
+
+
+
+.ios-dark-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* فاصله بین ردیف‌ها برای حس آی‌اواس */
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", sans-serif;
+    font-size: 14px;
+    background-color: #1c1c1e; /* پس‌زمینه تیره */
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px 0;
+    color: #f2f2f7; /* رنگ متن روشن */
+}
+
+    .ios-dark-table thead th {
+        background-color: #2c2c2e; /* هدر تیره */
+        color: #ffffff;
+        text-align: left;
+        padding: 12px 16px;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #3a3a3c;
+    }
+
+    .ios-dark-table tbody tr {
+        background-color: #2c2c2e; /* پس‌زمینه تیره برای ردیف‌ها */
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+        .ios-dark-table tbody tr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+
+    .ios-dark-table tbody td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #3a3a3c; /* مرز ردیف‌ها با رنگ تیره */
+    }
+
+    .ios-dark-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .ios-dark-table tbody td:nth-child(5) {
+        font-weight: 600;
+        color: #34c759; /* سبز برای موجود */
+    }
+
+    .ios-dark-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #ff3b30; /* قرمز برای ناموجود */
+    }
+
+
+.unix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Courier New", Courier, monospace; /* فونت تک‌خطی یونیکس */
+    font-size: 14px;
+    background-color: #121212; /* پس‌زمینه تیره مشابه ترمینال یونیکس */
+    color: #e0e0e0; /* متن روشن */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 20px 0;
+}
+
+    .unix-table thead th {
+        background-color: #333333; /* رنگ هدر تیره */
+        color: #ffffff; /* رنگ متن سفید */
+        text-align: left;
+        padding: 12px 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 1px solid #444444;
+    }
+
+    .unix-table tbody tr {
+        background-color: #1c1c1c; /* پس‌زمینه تیره برای ردیف‌ها */
+        border-radius: 5px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+        .unix-table tbody tr:hover {
+            background-color: #333333; /* تغییر رنگ هنگام هاور */
+            transform: translateY(-2px);
+        }
+
+    .unix-table tbody td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #444444;
+    }
+
+    .unix-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .unix-table tbody td:nth-child(5) {
+        font-weight: bold;
+        color: #2ecc71; /* سبز برای موجود */
+    }
+
+    .unix-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #e74c3c; /* قرمز برای ناموجود */
+    }
+
+
+.apple-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: #ffffff; /* پس‌زمینه سفید مشابه طراحی‌های اپل */
+    color: #333333; /* رنگ متن تیره */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+    .apple-table thead th {
+        background-color: #f7f7f7; /* رنگ هدر سفید خاکی */
+        color: #333333;
+        text-align: left;
+        padding: 16px 24px;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .apple-table tbody tr {
+        background-color: #ffffff; /* پس‌زمینه سفید برای ردیف‌ها */
+        border-radius: 8px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .apple-table tbody tr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+    .apple-table tbody td {
+        padding: 16px 24px;
+        text-align: left;
+        border-bottom: 1px solid #f7f7f7;
+    }
+
+    .apple-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .apple-table tbody td:nth-child(5) {
+        font-weight: bold;
+        color: #4cd964; /* سبز برای موجود */
+    }
+
+    .apple-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #ff3b30; /* قرمز برای ناموجود */
+    }
+
+
+
+/* جدول کلی */
+.android-advanced-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px; /* فاصله بین ردیف‌ها */
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: #fafafa; /* رنگ پس‌زمینه روشن */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+    /* هدر جدول */
+    .android-advanced-table thead th {
+        background-color: #6200ea; /* رنگ اصلی متریال اندروید */
+        color: #ffffff;
+        text-align: center;
+        padding: 14px 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: inset 0 -1px 0 rgba(255,255,255,0.2);
+    }
+
+    /* ردیف‌ها */
+    .android-advanced-table tbody tr {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        cursor: pointer;
+    }
+
+        /* حالت hover */
+        .android-advanced-table tbody tr:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background-color: #f3e5f5; /* سایه رنگی ملایم */
+        }
+
+    /* سلول‌ها */
+    .android-advanced-table tbody td {
+        padding: 14px 18px;
+        text-align: center;
+        vertical-align: middle;
+        border-bottom: none;
+    }
+
+        /* ستون وضعیت */
+        .android-advanced-table tbody td:nth-child(5) {
+            font-weight: 600;
+            color: #388e3c; /* سبز برای موجود */
+            background-color: #e8f5e9;
+            border-radius: 6px;
+            padding: 8px 12px;
+            transition: background-color 0.2s ease;
+        }
+
+    .android-advanced-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #d32f2f; /* قرمز برای ناموجود */
+        background-color: #ffebee;
+    }
+
+    /* انتخاب ردیف (برای GridView یا انتخاب دستی) */
+    .android-advanced-table tbody tr.selected {
+        background-color: #d1c4e9;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+
+
+
+/* جدول کلی */
+.android-modern-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 14px;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+    /* هدر جدول */
+    .android-modern-table thead th {
+        background-color: #03a9f4; /* آبی روشن Material */
+        color: #ffffff;
+        text-align: center;
+        padding: 16px 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    /* ردیف‌ها */
+    .android-modern-table tbody tr {
+        background: linear-gradient(145deg, #ffffff, #f1f1f1); /* سایه ملایم گرادیانت */
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        cursor: pointer;
+    }
+
+        /* حالت hover */
+        .android-modern-table tbody tr:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: linear-gradient(145deg, #e0f7fa, #b2ebf2);
+        }
+
+    /* سلول‌ها */
+    .android-modern-table tbody td {
+        padding: 14px 20px;
+        text-align: center;
+        vertical-align: middle;
+        border-bottom: none;
+    }
+
+        /* ستون وضعیت */
+        .android-modern-table tbody td:nth-child(5) {
+            font-weight: 600;
+            color: #388e3c; /* سبز برای موجود */
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            padding: 6px 12px;
+            transition: all 0.2s ease;
+        }
+
+    .android-modern-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #d32f2f; /* قرمز برای ناموجود */
+        background-color: #ffebee;
+    }
+
+    /* ردیف انتخاب شده */
+    .android-modern-table tbody tr.selected {
+        background: linear-gradient(145deg, #ffe082, #ffd54f);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+
+
+.devexpress-style-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #333333;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+    /* هدر جدول */
+    .devexpress-style-table thead th {
+        background-color: #1976d2;
+        color: #ffffff;
+        text-align: center;
+        padding: 14px 18px;
+        font-weight: bold;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+        /* افکت hover هدر */
+        .devexpress-style-table thead th.sortable:hover {
+            background-color: #1565c0;
+        }
+
+    /* ردیف‌ها */
+    .devexpress-style-table tbody tr {
+        background-color: #fafafa;
+        border-radius: 6px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+    }
+
+        /* حالت hover ردیف */
+        .devexpress-style-table tbody tr:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.01);
+        }
+
+    /* سلول‌ها */
+    .devexpress-style-table tbody td {
+        padding: 14px 18px;
+        text-align: center;
+        vertical-align: middle;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+        /* ستون وضعیت */
+        .devexpress-style-table tbody td:nth-child(5) {
+            font-weight: bold;
+            color: #388e3c;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            padding: 6px 12px;
+        }
+
+    /* ستون وضعیت ناموجود */
+    .devexpress-style-table tbody tr td:nth-child(5):contains('ناموجود') {
+        color: #d32f2f;
+        background-color: #ffebee;
+    }
+
+    /* سلول editable */
+    .devexpress-style-table tbody td[contenteditable="true"] {
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    /* ردیف انتخاب شده */
+    .devexpress-style-table tbody tr.selected {
+        background-color: #c5cae9;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }

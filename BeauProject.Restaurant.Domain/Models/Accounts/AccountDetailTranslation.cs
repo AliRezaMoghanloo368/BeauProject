@@ -1,9 +1,8 @@
 ﻿namespace BeauProject.Restaurant.Domain.Models.Accounts
 {
-    public class AccountDetailTranslation
+    public class AccountDetailTranslation : BaseEntity
     {
-        public int Id { get; set; }
-        public int AccountDetailId { get; set; }
+        public long AccountDetailId { get; set; }
         public string Language { get; set; } = "fa";
         public string Name { get; set; } = null!;
         public string? Description { get; set; }
