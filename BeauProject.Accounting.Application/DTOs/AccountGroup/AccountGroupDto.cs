@@ -2,10 +2,9 @@
 {
     public class AccountGroupDto
     {
-        public int Id { get; set; }
-        public long GroupHeaderId { get; set; }
+        public long Id { get; set; }
+        public long AccountHeaderId { get; set; }
         public string Code { get; set; } = null!;
-        public string Title { get; set; }
-        public bool IsActive { get; set; } = true;
+        public string Title { get; set; } = null!;
     }
 }

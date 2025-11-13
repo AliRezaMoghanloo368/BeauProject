@@ -7,6 +7,5 @@
         public string Code { get; set; } = null!;
         public string Title { get; set; } = null!;
         public string FullCode { get; set; } = null!;
-        public bool IsActive { get; set; } = true;
     }
 }

@@ -9,7 +9,6 @@ namespace BeauProject.Accounting.Application.DTOs.AccountSubGroup
         public string Code { get; set; } = null!;
         public string Title { get; set; } = null!;
         public string FullCode { get; set; } = null!;
-        public bool IsActive { get; set; } = true;
         public List<AccountDetailDto> Details { get; set; } = new();
     }
 }
