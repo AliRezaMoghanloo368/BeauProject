@@ -1,5 +1,4 @@
 ﻿using BeauProject.Restaurant.Data.EntityValidator;
-using BeauProject.Restaurant.Data.EntityValidator.AccountsValidator;
 using BeauProject.Restaurant.Data.EntityValidator.MenuValidator;
 using BeauProject.Restaurant.Domain.Models;
 using BeauProject.Restaurant.Domain.Models.Menu;
@@ -29,10 +28,10 @@ namespace BeauProject.Restaurant.Data.Context
         public DbSet<FoodAddonOption> FoodAddonOptions { get; set; } = null!;
         #endregion
 
-        //#region Modifier
-        //public DbSet<ModifierGroup> ModifierGroups { get; set; } = null!;
-        //public DbSet<ModifierItem> ModifierItems { get; set; } = null!;
-        //#endregion
+        #region Modifier
+        public DbSet<ModifierGroup> ModifierGroups { get; set; } = null!;
+        public DbSet<ModifierItem> ModifierItems { get; set; } = null!;
+        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -49,13 +48,6 @@ namespace BeauProject.Restaurant.Data.Context
             modelBuilder.ApplyConfiguration(new FoodAddonOptionValidator());
             //modelBuilder.ApplyConfiguration(new ModifierGroupValidator());
             //modelBuilder.ApplyConfiguration(new ModifierItemValidator());
-            // ✅ Accounts
-            modelBuilder.ApplyConfiguration(new AccountGroupValidator());
-            modelBuilder.ApplyConfiguration(new AccountGroupTranslationValidator());
-            modelBuilder.ApplyConfiguration(new AccountSubGroupValidator());
-            modelBuilder.ApplyConfiguration(new AccountSubGroupTranslationValidator());
-            modelBuilder.ApplyConfiguration(new AccountDetailValidator());
-            modelBuilder.ApplyConfiguration(new AccountDetailTranslationValidator());
 
             base.OnModelCreating(modelBuilder);
         }

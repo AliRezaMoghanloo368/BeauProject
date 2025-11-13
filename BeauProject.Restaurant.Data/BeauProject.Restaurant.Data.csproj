@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BeauProject.Accounting.Domain\BeauProject.Accounting.Domain.csproj" />
     <ProjectReference Include="..\BeauProject.Restaurant.Domain\BeauProject.Restaurant.Domain.csproj" />
     <ProjectReference Include="..\BeauProject.Shared.Data\BeauProject.Shared.Data.csproj" />
     <ProjectReference Include="..\BeauProject.Shared\BeauProject.Shared.csproj" />
