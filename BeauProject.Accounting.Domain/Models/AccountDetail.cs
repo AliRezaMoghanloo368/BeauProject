@@ -1,11 +1,12 @@
-﻿namespace BeauProject.Restaurant.Domain.Models.Accounts
+﻿namespace BeauProject.Accounting.Domain.Models
 {
     // حساب تفصیلی
-    public class AccountDetail
+    public class AccountDetail : BaseEntity
     {
-        public int Id { get; set; }
-        public int SubGroupId { get; set; }
+        public long SubGroupId { get; set; }
         public string Code { get; set; } = null!;
+        public string Title { get; set; } = null!;
+        public string FullCode { get; set; } = null!;
         public bool IsActive { get; set; } = true;
 
         public AccountSubGroup SubGroup { get; set; } = null!;

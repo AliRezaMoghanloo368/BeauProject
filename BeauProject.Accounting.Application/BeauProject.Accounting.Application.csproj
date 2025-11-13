@@ -12,12 +12,11 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <ProjectReference Include="..\BeauProject.Restaurant.Data\BeauProject.Restaurant.Data.csproj" />
-    <ProjectReference Include="..\BeauProject.Restaurant.Domain\BeauProject.Restaurant.Domain.csproj" />
+    <ProjectReference Include="..\BeauProject.Accounting.Data\BeauProject.Accounting.Data.csproj" />
+    <ProjectReference Include="..\BeauProject.Accounting.Domain\BeauProject.Accounting.Domain.csproj" />
     <ProjectReference Include="..\BeauProject.Shared\BeauProject.Shared.csproj" />
   </ItemGroup>
-
   
 </Project>

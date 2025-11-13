@@ -2,7 +2,6 @@
 using BeauProject.Restaurant.Data.EntityValidator.AccountsValidator;
 using BeauProject.Restaurant.Data.EntityValidator.MenuValidator;
 using BeauProject.Restaurant.Domain.Models;
-using BeauProject.Restaurant.Domain.Models.Accounts;
 using BeauProject.Restaurant.Domain.Models.Menu;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,15 +33,6 @@ namespace BeauProject.Restaurant.Data.Context
         //public DbSet<ModifierGroup> ModifierGroups { get; set; } = null!;
         //public DbSet<ModifierItem> ModifierItems { get; set; } = null!;
         //#endregion
-
-        #region Modifier
-        public DbSet<AccountGroup> AccountGroups { get; set; } = null!;
-        public DbSet<AccountGroupTranslation> AccountGroupTranslations { get; set; } = null!;
-        public DbSet<AccountSubGroup> AccountSubGroups { get; set; } = null!;
-        public DbSet<AccountSubGroupTranslation> AccountSubGroupTranslations { get; set; } = null!;
-        public DbSet<AccountDetail> AccountDetails { get; set; } = null!;
-        public DbSet<AccountDetailTranslation> AccountDetailTranslations { get; set; } = null!;
-        #endregion
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

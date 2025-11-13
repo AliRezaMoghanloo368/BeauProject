@@ -1,10 +1,11 @@
-﻿namespace BeauProject.Restaurant.Domain.Models.Accounts
+﻿namespace BeauProject.Accounting.Domain.Models
 {
     // حساب کل
-    public class AccountGroup
+    public class AccountGroup : BaseEntity
     {
-        public int Id { get; set; }
+        public long HeaderId { get; set; }
         public string Code { get; set; } = null!;
+        public string Title { get; set; } = null!;
         public bool IsActive { get; set; } = true;
 
         public ICollection<AccountGroupTranslation> Translations { get; set; } = new List<AccountGroupTranslation>();

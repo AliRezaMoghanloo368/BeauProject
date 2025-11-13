@@ -4,20 +4,22 @@ using BeauProject.Restaurant.Application.Features.ModifierGroupType.Request.Comm
 using BeauProject.Restaurant.Domain.Interfaces;
 using BeauProject.Restaurant.Domain.Models.Menu;
 using BeauProject.Shared.Patterns.ResultPattern;
+using DocumentFormat.OpenXml.Vml.Office;
+using FluentValidation;
 using MediatR;
 
 namespace BeauProject.Restaurant.Application.Features.ModifierGroupType.Handler.Command
 {
-    public class CreateModifierGroupHandler : IRequestHandler<CreateModifierGroupRequest, Result<bool>>
+    public class CreateAccountSubGroupHandler : IRequestHandler<CreateAccountGroupRequest, Result<bool>>
     {
         private readonly IModifierGroupRepository _repo;
         private readonly IMapper _mapper;
-        public CreateModifierGroupHandler(IModifierGroupRepository repo, IMapper mapper)
+        public CreateAccountSubGroupHandler(IModifierGroupRepository repo, IMapper mapper)
         {
             _repo = repo;
             _mapper = mapper;
         }
-        public async Task<Result<bool>> Handle(CreateModifierGroupRequest request, CancellationToken cancellationToken)
+        public async Task<Result<bool>> Handle(CreateAccountGroupRequest request, CancellationToken cancellationToken)
         {
             var valid = new CreateModifierGroupValidator();
             var isValid = await valid.ValidateAsync(request);
